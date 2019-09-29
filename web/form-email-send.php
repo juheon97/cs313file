@@ -36,7 +36,7 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    if(empty($name)||empty($visitor_email) || empty($subject)) 
+    if(empty($message)||empty($email) || empty($subject)) 
 {
     echo "Name and email are mandatory!";
     exit;
