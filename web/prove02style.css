@@ -62,16 +62,20 @@ h2 {
         }
 
 
-        #container {
+#container {
 	
-            width: 350px;
-            height: 200px;
-            margin: 0px auto;
-            padding: 10px;
-            background-color: #EFFFE0;
+    width: 650px;
+    height: 200px;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: #EFFFE0;
         }
         
-        #valid_form {
+#valid_form {
             
-            float: left;
+    float: left;
         }
+
+table {
+    margin: 10px;
+}

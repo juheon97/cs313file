@@ -8,7 +8,7 @@
     <script type = "text/javascript" src = "prove2.js"></script>
     <title>Homepage</title>
 </head>
-<body>
+<body onLoad="hide()">
 <section>
 <div class="topnav">
     <div class = "topnav-centered">
@@ -45,6 +45,18 @@
             Enter Email Address:    <input type="text" name="email"><br>
             Enter Message:  <textarea name="message"></textarea>
             <input type="submit" value="Send Form">
+            </form>
+        </div>
+    </div>
+<hr>
+<h1 class ="h">Go beyond</h1>
+<div id = "container">
+        <div id = "valid_form">
+            <form id = "whole_form">
+            <tr>
+                <td>Type text:</td>
+                <td><input type = "text" name = "sample"  id = "sample" size = "50" onInput = "validation(this.value, this.id)" required><br/><span id = "samplemessage" style = "font-size: 80%" class = "errormessage">Only text with no number and space up to 30 characters!</span></td>
+            </tr>
             </form>
         </div>
     </div>

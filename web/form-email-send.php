@@ -6,11 +6,11 @@
 
     if(empty($message)||empty($email) || empty($subject)) 
 {
-    echo "Name and email are mandatory!";
+    echo "Subject, message and email are mandatory!";
     exit;
 }
     else {
-        
+
     echo "Submitted Successfuly!";
     exit;
     }
