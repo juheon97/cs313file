@@ -36,7 +36,7 @@
 
     <hr>
 
-    <h1 class='h'>Send me an Email</h1>
+    <h1 class='h'>Sneding Email using my Gamil</h1>
 
     <div id = "container">
         <div id = "valid_form">
