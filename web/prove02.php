@@ -41,8 +41,8 @@
     <div id = "container">
         <div id = "valid_form">
             <form method="post" name="myemailform" action="form-email-send.php">
-            Enter Subject: <input type="text" name="subject">
-            Enter Email Address:    <input type="text" name="email">
+            Enter Subject: <input type="text" name="subject"><br>
+            Enter Email Address:    <input type="text" name="email"><br>
             Enter Message:  <textarea name="message"></textarea>
             <input type="submit" value="Send Form">
             </form>
