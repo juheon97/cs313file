@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/prove02style.css">
+    <script type = "text/javascript" src = "prove2.js"></script>
     <title>Homepage</title>
 </head>
 <body>
@@ -26,10 +27,13 @@
         <p>Hello, my name is Juheon Song from South Korea. My major is Data Science in BYUI. During my spare time, I usually study programming to pursue my future career. I personally love playing video games, too.</p>
         <p>One thing I love the most in BYUI is the education. I was able to make a good relationship with professors in CS department, and they always welcome students who do have a question about programming.</p>
         <p>I have been a member of the church since I was 12 years old. My parents are not members of the church so as my sister. I am the only members in my family, but I still love being the member of the church.</p>
-        <p>Actually, it is my last semester in BYUI. I have one internship to graduate right now. I am currently taking web engineering II, so I do know about web stuff. The reasons why I am taking this course is to learn basic about web programming since I am not good at web coding and fullfilling my 12 credits.</p>
-      
 </div>
 </section>
+
+<button onclick="display_verse()">Check My Favorite Verse</button>
+
+<p id="verse"></p>
+
     <hr>
 
     <h1 class='h'>Send me an Email</h1>
@@ -37,7 +41,7 @@
     <div id = "container">
         <div id = "valid_form">
             <form method="post" name="myemailform" action="form-email-send.php">
-            Enter Name: <input type="text" name="name">
+            Enter Subject: <input type="text" name="subject">
             Enter Email Address:    <input type="text" name="email">
             Enter Message:  <textarea name="message"></textarea>
             <input type="submit" value="Send Form">
