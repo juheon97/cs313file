@@ -36,7 +36,7 @@
     <div class='center_div'>
 <h1><em>Welcome to my Page</em></h1>
         
-        <img src="me.jpg" alt="Juheon Song" width="250" height="222">
+        <img class='a' src="me.jpg" alt="Juheon Song" width="250" height="222">
         <h2>Juheon Song</h2>
         <p>Hello, my name is Juheon Song from South Korea. My major is Data Science in BYUI. During my spare time, I usually study programming to pursue my future career. I personally love playing video games, too.</p>
         <p>One thing I love the most in BYUI is the education. I was able to make a good relationship with professors in CS department, and they always welcome students who do have a question about programming.</p>
