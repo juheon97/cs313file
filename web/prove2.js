@@ -9,8 +9,8 @@ function validation(value, id) {
 
     var validation = "no_error";
 	switch(id){
-		case "first_name":
-			if (!namecheck.test(value)) {
+		case "sample":
+			if (!textcheck.test(value)) {
 				validation = "error";
 			}
             break;
