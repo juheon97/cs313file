@@ -11,7 +11,7 @@
 <section>
 <div class="topnav">
     <div class = "topnav-centered">
-        <a id = "active" href = "prove02_2.php">CS Home</a>
+        <a id = "active" href = "prove02_02.php">CS Home</a>
     </div> 
     <a  href = "prove02.php">About Me</a>
 </div>
