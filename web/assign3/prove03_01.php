@@ -23,13 +23,13 @@
 
 <nav>
         <ul>
-            <li><a href="prove02_02.php">HOME</a></li>
-            <li><a href="test.html">PRODUCTS</a>
+            <li><a href="../prove02_02.php">HOME</a></li>
+            <li><a href="prove3.php">PRODUCTS</a>
                 <ul>
-                    <li><a href="test.html">Figures</a></li>
+                    <li><a href="prove3.php">Figures</a></li>
                 </ul>
-                <li><a href="whatever"><img src='shopping.png' class="logo-image" title="View Cart"></a></li>
             </li>
+            <li><a href="viewcart.php"><img src='shopping.png' class="logo-image" title="View Cart"></a></li>
         </ul>
     </nav>
     <br>
