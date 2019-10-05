@@ -74,3 +74,11 @@ h3 {
     text-align: center;
 
 }
+.logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 55%;
+    overflow: hidden;
+    margin-top: -15px;
+}
+    

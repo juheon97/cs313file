@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="figure.css">
     <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>   
+    <link rel="stylesheet" type="text/css" href="jquery.exzoom.css">
     <script src = "jquery.exzoom.js"></script>  
     <script>
         $(function(){
