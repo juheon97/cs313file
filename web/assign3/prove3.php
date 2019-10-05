@@ -11,7 +11,7 @@
 <body>
 <nav>
         <ul>
-            <li><a href="prove02_02.php">HOME</a></li>
+            <li><a href="../prove02_02.php">HOME</a></li>
             <li><a href="prove3.php">PRODUCTS</a>
                 <ul>
                     <li><a href="prove3.php">Figures</a></li>
