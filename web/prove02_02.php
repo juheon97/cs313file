@@ -26,7 +26,7 @@
         </ul>
     </div>
 </section>
-    <hr>
+   
     
     
 </body>
