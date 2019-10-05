@@ -22,7 +22,7 @@
     <br>
     <div>
         <ul>
-            <li><a href="assgin3/prove03.php">Week 03</a></li>
+            <li><a href="assgin3/prove3.php">Week 03</a></li>
         </ul>
     </div>
 </section>
