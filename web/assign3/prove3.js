@@ -9,7 +9,7 @@ function addToCart(name, price, id){
 		url: "addtocart.php",
 		data: { id: id, name: name, price: price },
 		success: function(data) {
-			document.getElementById('cart').innerHTML = data
+			document.getElementById('cart').innerHTML = data;
 		}
 	})
 }
