@@ -49,20 +49,20 @@ session_start()
         echo "<div class='table-row'>";
         echo "<div class='table-cell'>";
         if ($_SESSION['cart'][$i][0] == "Elder Drake XL Figure") {
-            echo "<img class='img1' src='$dragon' alt='" . $_SESSION['cart'][$i][0] . "'>";
+            echo "<img class='img1' src='$dragon' alt='".$_SESSION['cart'][$i][0]."'>";
         }
         else if ($_SESSION['cart'][$i][0] == "Ahri") {
-            echo "<img class='img1' src='$ahri' alt='" . $_SESSION['cart'][$i][0] . "'>";
+            echo "<img class='img1' src='$ahri' alt='".$_SESSION['cart'][$i][0]."'>";
         }
         else{
-            echo "<img class='img1' src='$kaisa' alt='" . $_SESSION['cart'][$i][0] . "'>";
+            echo "<img class='img1' src='$kaisa' alt='".$_SESSION['cart'][$i][0]."'>";
         };
         echo "</div>";
         echo "<div class='table-cell'>";
-        echo "<p>" . $_SESSION['cart'][$i][0] . "</p>";
+        echo "<p>".$_SESSION['cart'][$i][0]. "</p>";
         echo "</div>";
         echo "<div class='table-cell'>";
-        echo "<p>$ " . $_SESSION['cart'][$i][1] . "</p>";
+        echo "<p>$ ".$_SESSION['cart'][$i][1]."</p>";
         echo "</div>";
         echo "</div>";
         echo "</div>";
@@ -70,8 +70,7 @@ session_start()
         echo "<input type='hidden' name='product_index' value='$i'>";
         echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";            
         echo "</form>";
-       
-    }        
+    }       
     ?>
     <br>
     <br>
