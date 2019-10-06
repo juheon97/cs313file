@@ -25,6 +25,11 @@
           $totalPrice += $idAssoc[$id]["price"];
         }
         ?>
+
+<div> 
+        <input type="button" id="myBtn" onclick="location.href='checkout.php';" value="Checkout">
+       <?php echo "<span class=\"textTotal\"> Total: \$$totalPrice.00</span><br>"; ?>
+       </div>
     
 </body>
 </html>
