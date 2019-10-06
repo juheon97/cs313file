@@ -69,10 +69,12 @@ session_start()
         echo "<p>$ ".$cart[$i][1]."</p>";
         echo "</div>";
         echo "<div class='table-cell'>";
-        echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";
+        echo "<input type='hidden' name='product_index' value='$i'>";
+        echo "<input type='submit' class='btn btn-danger' value='Remove'>";
         echo "</div>";
         echo "</div>";
-        echo "</div>";         
+        echo "</div>";  
+
         echo "</form>";
     }       
     ?>
