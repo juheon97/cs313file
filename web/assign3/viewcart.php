@@ -82,7 +82,7 @@ session_start()
     <br>
 
     <div class='t_center'>
-        <input onclick="checkout.php" value="Check Out" class="btn btn-inf">
+        <input onclick="checkout.php" value="Check Out" type='button' class="btn btn-info">
     </div>
     
 
