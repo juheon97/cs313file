@@ -6,7 +6,7 @@ if (!isset($_SESSION['cart'])) {
 ?>
 
 <?php
-$f = $_POST["fisrt_name"];
+$first = $_POST["fisrt_name123"];
 $l = $_POST["last_name"];
 $a = $_POST["address"];
 $p = $_POST["phone"];
@@ -110,7 +110,7 @@ $p = $_POST["phone"];
         <div id = "valid_form">
             <form>
                 <div>
-                    <pre>First Name: <?php echo $f ?></pre>
+                    <pre>First Name: <?php echo $first ?></pre>
                     <pre>Last Name: <?php echo $l ?></pre>
                     <pre>address: <?php echo $a ?></pre>
                     <pre>Phone Number: <?php echo $p ?></pre>
