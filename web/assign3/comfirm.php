@@ -61,9 +61,6 @@ $p = $_POST["phone"];
              <div class="table-cell">
                 <p>Price</p>
              </div>
-             <div class="table-cell">
-                <p>Remove From Cart</p>
-             </div>
         </div>
     </div>
 
@@ -92,10 +89,6 @@ $p = $_POST["phone"];
         echo "</div>";
         echo "<div class='table-cell'>";
         echo "<p>$ ".$cart[$i][1]."</p>";
-        echo "</div>";
-        echo "<div class='table-cell'>";
-        echo "<input type='hidden' name='product_index' value='$i'>";
-        echo "<input type='submit' class='btn btn-danger' value='Remove'>";
         echo "</div>";
         echo "</div>";
         echo "</div>";  
