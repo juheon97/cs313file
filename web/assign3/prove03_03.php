@@ -41,12 +41,13 @@
        <h3>Elder Dragon XL Figure</h3> <p>$ 25.00 </p>
        <input type="hidden" value="25.00" name="price">
        <input type="hidden" value="Arcade Kaisa" name="figure"> 
-       <input id="btn1" class="btn btn-info" name="button1" type = submit value ="Add to Cart">
+       <input id="btn1" class="btn btn-info" name="button1" type = "submit" value ="Add to Cart">
 
-    </form>
+       </div>
+        </form>
        <br>
        <br>
-   </div>
+   
     <div class="exzoom" id="exzoom">
         <div class="exzoom_img_box">
             <ul class='exzoom_img_ul'>

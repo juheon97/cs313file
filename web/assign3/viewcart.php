@@ -46,26 +46,27 @@ session_start()
     $dragon="dargon.png";
     $ahri="ahri.png";
     $kaisa="kaisa.png";
-    foreach ($_SESSION['cart'] as $i => $value) {
+    $cart = $_SESSION['cart'];
+    foreach ($cart as $i => $value) {
         echo "<form class='cart_form' action='removefromcart.php' method='post'>";
         echo "<div class='table-box'>";
         echo "<div class='table-row'>";
         echo "<div class='table-cell'>";
-        if ($_SESSION['cart'][$i][0] == "Elder Drake XL Figure") {
-            echo "<img class='img1' src='$dragon' alt='".$_SESSION['cart'][$i][0]."'>";
+        if ($cart[$i][0] == "Elder Drake XL Figure") {
+            echo "<img class='img1' src='$dragon' alt='".$cart[$i][0]."'>";
         }
-        else if ($_SESSION['cart'][$i][0] == "K/DA Ahri") {
-            echo "<img class='img1' src='$ahri' alt='".$_SESSION['cart'][$i][0]."'>";
+        else if ($cart[$i][0] == "K/DA Ahri") {
+            echo "<img class='img1' src='$ahri' alt='".$cart[$i][0]."'>";
         }
         else{
-            echo "<img class='img1' src='$kaisa' alt='".$_SESSION['cart'][$i][0]."'>";
+            echo "<img class='img1' src='$kaisa' alt='".$cart[$i][0]."'>";
         };
         echo "</div>";
         echo "<div class='table-cell'>";
-        echo "<p>".$_SESSION['cart'][$i][0]. "</p>";
+        echo "<p>".$cart[$i][0]. "</p>";
         echo "</div>";
         echo "<div class='table-cell'>";
-        echo "<p>$ ".$_SESSION['cart'][$i][1]."</p>";
+        echo "<p>$ ".$cart[$i][1]."</p>";
         echo "</div>";
         echo "<div class='table-cell'>";
         echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";
