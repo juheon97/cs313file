@@ -105,7 +105,7 @@ $p = $_POST["phone"];
     ?>
     <br>
     <br>
-    
+
     <div id = "container">
         <div id = "valid_form">
             <form>
@@ -118,6 +118,11 @@ $p = $_POST["phone"];
                 
             </form>
         </div>
+    </div>
+    <br>
+    <br>
+    <div class='t_center'>
+        <a href="prove3.php" class="btn btn-default">Shop Again</a>
     </div>
     
 </body>

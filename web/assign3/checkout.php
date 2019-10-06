@@ -35,11 +35,11 @@ if (!isset($_SESSION['cart'])) {
                 <div id = "valid_form">
                     <form action = "comfirm.php" method = "POST" id = "whole_form" class = "whole_form">
                         <table style = "margin: 10px;"> 
-                            <div>
+                            
                             <tr>
                                 <td>First Name:</td>
                                 <td><input type = "text" name = "first_name"  id = "first_name" size = "50" >
-                            </div>
+                            
                             <tr>
                                 <td>Last Name:</td>
                             <td><input type = "text" name = "last_name" id = "last_name" size = "50" >
