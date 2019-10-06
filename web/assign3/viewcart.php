@@ -69,16 +69,16 @@ session_start()
 
         echo "<input type='hidden' name='product_index' value='$i'>";
         echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";            
-        echo "</form>";
         echo "</div>";
         echo "</form>";
+       
     }        
     ?>
     <br>
     <br>
     
 
-
+<hr>
     <footer id = "header-right">
         <br>
             <p>Posted by: Juheon Song</p>
