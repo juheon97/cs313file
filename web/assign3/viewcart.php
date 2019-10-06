@@ -69,7 +69,6 @@ session_start()
 
         echo "<input type='hidden' name='product_index' value='$i'>";
         echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";            
-        echo "</div>";
         echo "</form>";
        
     }        
