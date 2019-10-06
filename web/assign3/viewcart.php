@@ -80,6 +80,10 @@ session_start()
     ?>
     <br>
     <br>
+
+    <div class='t_center'>
+        <input onclick="checkout.php" value="Check Out" class="btn btn-inf">
+    </div>
     
 
 <hr>
