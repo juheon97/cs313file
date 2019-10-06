@@ -9,6 +9,7 @@
     <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>   
     <link rel="stylesheet" type="text/css" href="jquery.exzoom.css">
     <script src = "jquery.exzoom.js"></script>  
+    <script src = "prove3.js"></script>  
     <script>
         $(function(){
 
