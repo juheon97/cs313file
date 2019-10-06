@@ -10,7 +10,7 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="styleprove03_02.css">
-    <title>Homepage</title>
+    <title>ShoppingCart</title>
 </head>
 <body>
 <nav>
@@ -28,7 +28,7 @@ session_start()
     <div class="table-box">
         <div class="table-row table-head">
             <div class="table-cell">
-                <p>Product</p>
+                <p>Model Picture</p>
             </div>
             <div class="table-cell">
                 <p>Name</p>
@@ -60,12 +60,12 @@ session_start()
         echo "</div>";
         echo "<div class='table-cell'>";
         echo "<p>" . $_SESSION['cart'][$i][0] . "</p>";
-        echo "</div>"
+        echo "</div>";
         echo "<div class='table-cell'>";
         echo "<p>$ " . $_SESSION['cart'][$i][1] . "</p>";
-        echo "</div>"
-        echo "</div>"
-        echo "</div>"
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
 
         echo "<input type='hidden' name='product_index' value='$i'>";
         echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";            
@@ -73,7 +73,6 @@ session_start()
         echo "</div>";
         echo "</form>";
     }        
-
     ?>
     <br>
     <br>
