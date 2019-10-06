@@ -6,7 +6,7 @@ function addToCart(name, price, id){
 
 	$.ajax({
 		method: "POST",
-		url: "addToCart.php",
+		url: "addtocart.php",
 		data: { id: id, name: name, price: price },
 		success: function(data) {
 			document.getElementById('cart').innerHTML = data
