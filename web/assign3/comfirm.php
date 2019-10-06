@@ -110,6 +110,7 @@ $p = $_POST["phone"];
         <div id = "valid_form">
             <form>
                 <div>
+                    <pre>            Personal Info</pre>
                     <pre>First Name: <?php echo $first ?></pre>
                     <pre>Last Name: <?php echo $l ?></pre>
                     <pre>address: <?php echo $a ?></pre>
