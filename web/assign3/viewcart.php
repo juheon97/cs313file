@@ -36,6 +36,9 @@ session_start()
              <div class="table-cell">
                 <p>Price</p>
              </div>
+             <div class="table-cell">
+                <p>Remove From Cart</p>
+             </div>
         </div>
     </div>
 
@@ -64,11 +67,11 @@ session_start()
         echo "<div class='table-cell'>";
         echo "<p>$ ".$_SESSION['cart'][$i][1]."</p>";
         echo "</div>";
+        echo "<div class='table-cell'>";
+        echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";
         echo "</div>";
         echo "</div>";
-
-        echo "<input type='hidden' name='product_index' value='$i'>";
-        echo "<input type='submit' class='btn btn-danger' value='Remove From Cart'>";            
+        echo "</div>";         
         echo "</form>";
     }       
     ?>
