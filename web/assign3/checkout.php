@@ -37,7 +37,7 @@ if (!isset($_SESSION['cart'])) {
                         <table style = "margin: 10px;"> 
                             <tr>
                                 <td>First Name:</td>
-                                <td><input type = "text" name = "first_name123"  id = "first_name" size = "50" >
+                                <td><input type = "text" name = "f_name"  id = "f_name" size = "50" >
                             <tr>
                                 <td>Last Name:</td>
                             <td><input type = "text" name = "last_name" id = "last_name" size = "50" >
