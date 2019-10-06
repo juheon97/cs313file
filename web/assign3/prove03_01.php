@@ -39,7 +39,7 @@
     <form name="form1" action="addtocart.php" method="post">
    <div class="t_center">
        <h3>Elder Dragon XL Figure</h3> <p>$ 25.00 </p> <input id="btn1" class="btn btn-info"
-       name="button1" type = submit value ="Add to Cart">
+       name="button1" type = submit value ="Add to Cart123">
     </form>
        <br>
        <br>
