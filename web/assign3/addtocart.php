@@ -1,9 +1,8 @@
 <?php
 session_start();
-$f = $_POST["figure"];
-$p = $_POST["price"];
-if(empty($_SESSION['cart'])) {
-    $_SESSION['cart'] = array("$f", "$p");
+if (isset($_POST["figure"])) {
+    $array = array($_POST["figure"], $_POST["price"]);
+    array_push($_SESSION['cart'], $array);
     header("Location: prove3.php");
     die();
 }
