@@ -1,7 +1,16 @@
 <?php
-session_start()
+session_start();
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+}
 ?>
 
+<?php
+$f = $_POST["fisrt_name"];
+$l = $_POST["last_name"];
+$a = $_POST["address"];
+$p = $_POST["phone"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +18,8 @@ session_start()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="styleprove03_02.css">
-    <title>ShoppingCart</title>
+    <link rel="stylesheet" href="styleprove03_04.css">
+    <title>Homepage</title>
 </head>
 <body>
 <nav>
@@ -24,7 +33,23 @@ session_start()
             <li><a href="viewcart.php"><img src='shopping.png' class="logo-image" title="View Cart"></a></li>
         </ul>
     </nav>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <!DOCTYPE html>
+<html lang = "en">
+<head> 
+      
+    <title> Comfirmation </title>
+</head>
+    
+    
+<body>
+    
+    <h1 align = "center">Purchase Review</h1>
+    <br>
+    <br>
     <div class="table-box">
         <div class="table-row table-head">
             <div class="table-cell">
@@ -80,13 +105,29 @@ session_start()
     ?>
     <br>
     <br>
-
-    <div class='t_center'>
-        <a href="checkout.php" class="btn btn-info">Check Out</a>
+    
+    <div id = "container">
+        <div id = "valid_form">
+            <form>
+                <div>
+                    <pre>First Name: <?php echo $f ?></pre>
+                    <pre>Last Name: <?php echo $l ?></pre>
+                    <pre>address: <?php echo $a ?></pre>
+                    <pre>Phone Number: <?php echo $p ?></pre>
+                </div>
+                
+            </form>
+        </div>
     </div>
     
+</body>
 
-<hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
     <footer id = "header-right">
         <br>
             <p>Posted by: Juheon Song</p>
