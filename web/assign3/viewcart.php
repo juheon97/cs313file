@@ -54,7 +54,7 @@ session_start()
         if ($_SESSION['cart'][$i][0] == "Elder Drake XL Figure") {
             echo "<img class='img1' src='$dragon' alt='".$_SESSION['cart'][$i][0]."'>";
         }
-        else if ($_SESSION['cart'][$i][0] == "Ahri") {
+        else if ($_SESSION['cart'][$i][0] == "K/DA Ahri") {
             echo "<img class='img1' src='$ahri' alt='".$_SESSION['cart'][$i][0]."'>";
         }
         else{
