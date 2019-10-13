@@ -4,14 +4,14 @@ DROP TABLE calendar;
 DROP TABLE user_info;
 
 CREATE TABLE user_info (
-    user_info_id        SERIAL NOT NULL PRIMARY KEY,
+    user_info_id         SERIAL PRIMARY KEY,
     u_username           VARCHAR(20) NOT NULL,
     u_password           VARCHAR(20) NOT NULL,
     first_name           VARCHAR(20) NOT NULL,
     last_name            VARCHAR(20) NOT NULL
 );
 CREATE TABLE calendar (
-    calendar_id         SERIAL NOT NULL PRIMARY KEY,
+    calendar_id         SERIAL PRIMARY KEY,
     calendar_name       VARCHAR(20) NOT NULL,
     user_info_id        INT NOT NULL REFERENCES user_info(user_info_id)
 );
@@ -24,7 +24,7 @@ CREATE TABLE subject_event (
 
 CREATE TABLE events (
 
-    event_id            SERIAL NOT NULL PRIMARY KEY,
+    event_id            SERIAL PRIMARY KEY,
     edescription        VARCHAR(200) NOT NULL,
     edate               DATE NOT NULL,
     etime               TIME NOT NULL,
