@@ -45,7 +45,7 @@
 
         foreach ($sub as $s) {
             $sname = $s['sesubject'];
-            echo $s . "<br>";
+            echo $sname . "<br>";
         }   
 
         foreach ($eve as $e) {
