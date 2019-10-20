@@ -12,12 +12,19 @@
     <?php
         require_once("db.php");
         $db = get_db();    
+        $query = query('SELECT first_name, last_name FROM user_info');
 
-        foreach ($db->query('SELECT first_name, last_name FROM user_info') as $name) {
-            echo $name['first_name'] . "<br>";
-            echo $name['last_name'] . "<br>";
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $name = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        }
+        foreach ($name as $n) {
+            $fname = $n['first_name'];
+            $lname = $comment['last_name'];
+            
+            echo $fname . "<br>"; 
+            echo $lname . "<br>";
+        }           
       ?>
     </div>
 </body>
