@@ -1,3 +1,8 @@
+<?php 
+require_once("db.php");
+$db = get_db();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +15,13 @@
 <body>
     <div>
     <?php
-        require_once("db.php");
-        $db = get_db();
         $statement = $db->query('SELECT first_name, last_name FROM user_info');
         $statementc = $db->query('SELECT calendar_name FROM calendar');
         $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
-        $name = $statement->fetchAll(PDO::FETCH_ASSOC);
-        echo "<p class='txt_cen'>".$name['first_name'].' '.$name['last_name'].' '.$ct['calendar_name'].' '.'Calendar'."</p>";
+        $name = $statement->fetchAll(PDO::FETCH_ASSOC);n
+        foreach ($name as $n && $ct as $c) {
+            echo "<p class='txt_cen'>".$n['first_name'].' '.$n['last_name'].' '.$c['calendar_name'].' '.'Calendar'."</p>";
+        }
       ?>
     </div>
 </body>
