@@ -1,8 +1,3 @@
-<?php 
-require_once("db.php");
-$db = get_db();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +10,16 @@ $db = get_db();
 <body>
     <div>
     <?php
+        require_once("db.php");
+        $db = get_db();
         $statement = $db->query('SELECT first_name, last_name FROM user_info');
-        $statementc = $db->query('SELECT calendar_name FROM calendar');
-        $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
+        $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $statementc = $db->query('SELECT calendar_name FROM calendar');
+        $statementc->execute();
+        $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
+    
         echo "<p class='txt_cen'>".$name['first_name'].' '.$name['last_name'].' '.$ct['calendar_name'].' '.'Calendar'."</p>";
       ?>
     </div>
