@@ -18,7 +18,7 @@ $db = get_db();
         $statement = $db->query('SELECT first_name, last_name FROM user_info');
         $statementc = $db->query('SELECT calendar_name FROM calendar');
         $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
-        $name = $statement->fetchAll(PDO::FETCH_ASSOC);n
+        $name = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($name as $n && $ct as $c) {
             echo "<p class='txt_cen'>".$n['first_name'].' '.$n['last_name'].' '.$c['calendar_name'].' '.'Calendar'."</p>";
         }
