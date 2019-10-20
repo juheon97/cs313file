@@ -19,7 +19,7 @@ $db = get_db();
         $statementc = $db->query('SELECT calendar_name FROM calendar');
         $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
-        echo "<p class='txt_cen'>".$name[0]['first_name'].' '.$name[0]['last_name'].' '.$ct[0]['calendar_name'].' '.'Calendar'."</p>";
+        echo "<p class='txt_cen'>".$name['first_name'].' '.$name['last_name'].' '.$ct['calendar_name'].' '.'Calendar'."</p>";
       ?>
     </div>
 </body>
