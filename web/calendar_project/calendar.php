@@ -8,6 +8,7 @@
     <title>calendar</title>
 </head>
 <body>
+    <div>
     <?php
         require_once("db.php");
         $db = get_db();
@@ -17,6 +18,6 @@
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
         echo "<p class='txt_cen'>".$name['first_name'].' '.$name['last_name'].' '.$ct['calendar_name'].' '.'Calendar'."</p>";
       ?>
-    
+    </div>
 </body>
 </html>
