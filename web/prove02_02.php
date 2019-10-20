@@ -23,6 +23,7 @@
     <div>
         <ul>
             <li><a href="../assign3/prove3.php">Week 03</a></li>
+            <li><a href="../calendar_project/calendar.php">PHP project</a><li>
         </ul>
     </div>
 </section>
