@@ -12,7 +12,7 @@
     <?php
         require_once("db.php");
         $db = get_db();    
-        $query = query('SELECT first_name, last_name FROM user_info');
+        $query = 'SELECT first_name, last_name FROM user_info';
 
         $statement = $db->prepare($query);
         $statement->execute();
