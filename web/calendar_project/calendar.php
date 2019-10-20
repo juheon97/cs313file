@@ -20,10 +20,44 @@
         $query2 = 'SELECT calendar_name FROM calendar';
         $statementc = $db->prepare($query2);
         $statementc->execute();
-        $cn = $statementc->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($name as $n && $cn as $c) {
-            echo "<p class='txt_cen'>".$n['first_name'].' '.$n[last_name].' '.$c['calendar_name'].' '."Calendar"."</p>";
-        }
+        $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
+        $query3 = 'SELECT sesubject FROM subject_event';
+        $statements = $db->prepare($query3);
+        $statements->execute();
+        $sub = $statements->fetchAll(PDO::FETCH_ASSOC);
+        $query4 = 'SELECT edescription, edate,etime FROM events';
+        $statemente = $db->prepare($query4);
+        $statemente->execute();
+        $eve = $statemente->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($name as $n) {
+            $fname = $n['first_name'];
+            $lname = $n['last_name'];
+            
+            echo $fname . "<br>"; 
+            echo $lname . "<br>";
+        }   
+
+        foreach ($cal as $c) {
+            $cname = $c['calendar_name'];
+            echo $cname . "<br>";
+        }   
+
+        foreach ($sub as $s) {
+            $sname = $s['sesubject'];
+            echo $s . "<br>";
+        }   
+
+        foreach ($eve as $e) {
+            $des = $e['edescription'];
+            $date = $e['edate'];
+            $time = $e['etime'];
+            
+            echo $des . "<br>"; 
+            echo $date . "<br>";
+            echo $time . "<br>";
+        }   
+     
         
       ?>
     </div>
