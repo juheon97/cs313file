@@ -20,7 +20,13 @@
         $statementc->execute();
         $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
     
-        echo "<p class='txt_cen'>".$name['first_name'].' '.$name['last_name'].' '.$ct['calendar_name'].' '.'Calendar'."</p>";
+        foreach ($name as $n){
+            $fname = $n['first_name'];
+            $lname = $n['last_name'];
+
+            echo $fname . "<br>"; 
+            echo $lname . "<br>";
+        }
       ?>
     </div>
 </body>
