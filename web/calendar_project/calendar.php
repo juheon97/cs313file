@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/header.css">
     <title>calendar</title>
 </head>
 <body>
@@ -16,14 +17,14 @@
         $statement = $db->prepare($query);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $query2 = 'SELECT calendar_name FROM calendar';
+        $statementc = $db->prepare($query2);
+        $statementc->execute();
+        $cn = $statementc->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($name as $n) {
-            $fname = $n['first_name'];
-            $lname = $n['last_name'];
-            
-            echo $fname . "<br>"; 
-            echo $lname . "<br>";
-        }           
+        echo "<p class='txt_cen'>".$name['first_name'].' '.$name[last_name].' '.$cn['calendar_name'].' '."Calendar"."</p>";
+
+        
       ?>
     </div>
 </body>
