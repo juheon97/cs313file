@@ -11,21 +11,12 @@
     <div>
     <?php
         require_once("db.php");
-        $db = get_db();
-        $statement = $db->query('SELECT first_name, last_name FROM user_info');
-        $statement->execute();
-        $name = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $db = get_db();    
 
-        $statementc = $db->query('SELECT calendar_name FROM calendar');
-        $statementc->execute();
-        $ct = $statementc->fetchAll(PDO::FETCH_ASSOC);
-    
-        foreach ($name as $n){
-            $fname = $n['first_name'];
-            $lname = $n['last_name'];
+        foreach ($db->query('SELECT first_name, last_name FROM user_info') as $name) {
+            echo $name['first_name'] . "<br>";
+            echo $name['last_name'] . "<br>";
 
-            echo $fname . "<br>"; 
-            echo $lname . "<br>";
         }
       ?>
     </div>
