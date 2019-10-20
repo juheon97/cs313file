@@ -21,9 +21,9 @@
         $statementc = $db->prepare($query2);
         $statementc->execute();
         $cn = $statementc->fetchAll(PDO::FETCH_ASSOC);
-
-        echo "<p class='txt_cen'>".$name['first_name'].' '.$name[last_name].' '.$cn['calendar_name'].' '."Calendar"."</p>";
-
+        foreach ($name as $n && $cn as $c) {
+            echo "<p class='txt_cen'>".$n['first_name'].' '.$n[last_name].' '.$c['calendar_name'].' '."Calendar"."</p>";
+        }
         
       ?>
     </div>
