@@ -17,14 +17,13 @@
         $statement = $db->prepare($query);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($name);
         $query2 = 'SELECT calendar_name FROM calendar';
         $statementc = $db->prepare($query2);
         $statementc->execute();
         $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<p class='txt_cen'>".$name[0][0]."'"." ".$cal[0][0]." ". "Calendar"."</p>";
-       
-     
         
       ?>
     </div>
