@@ -13,7 +13,7 @@
         require_once("db.php");
         $db = get_db();    
 
-        $query = 'SELECT first_name, last_name FROM user_info';
+        $query = 'SELECT first_name FROM user_info';
         $statement = $db->prepare($query);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -21,42 +21,9 @@
         $statementc = $db->prepare($query2);
         $statementc->execute();
         $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
-        $query3 = 'SELECT sesubject FROM subject_event';
-        $statements = $db->prepare($query3);
-        $statements->execute();
-        $sub = $statements->fetchAll(PDO::FETCH_ASSOC);
-        $query4 = 'SELECT edescription, edate,etime FROM events';
-        $statemente = $db->prepare($query4);
-        $statemente->execute();
-        $eve = $statemente->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($name as $n) {
-            $fname = $n['first_name'];
-            $lname = $n['last_name'];
-            
-            echo $fname . "<br>"; 
-            echo $lname . "<br>";
-        }   
-
-        foreach ($cal as $c) {
-            $cname = $c['calendar_name'];
-            echo $cname . "<br>";
-        }   
-
-        foreach ($sub as $s) {
-            $sname = $s['sesubject'];
-            echo $sname . "<br>";
-        }   
-
-        foreach ($eve as $e) {
-            $des = $e['edescription'];
-            $date = $e['edate'];
-            $time = $e['etime'];
-            
-            echo $des . "<br>"; 
-            echo $date . "<br>";
-            echo $time . "<br>";
-        }   
+        echo "<p class='txt_cen'>".$name[0][0]."'"." ".$cal[0][0]." ". "Calendar"."</p>";
+       
      
         
       ?>
