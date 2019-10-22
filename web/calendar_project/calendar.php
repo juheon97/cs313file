@@ -23,7 +23,7 @@
         $statementc->execute();
         $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<p class='txt_cen'>".$name[0][0]."'"." ".$cal[0][0]." ". "Calendar"."</p>";
+        echo "<p class='txt_cen'>".$name[0]."'"." ".$cal[0]." ". "Calendar"."</p>";
         
       ?>
     </div>
