@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="login_form.css">
+    <link rel="stylesheet" href="login_form2.css">
     <title>Loginpage</title>
 </head>
 <body>
+    <header>
+        <h1 class="txt_cen">Welcome to Calendar Project</h1>
+    </header>
 
     <form class="login_f">
         <h1>Login</h1>
         
         <div class="txtb">
-            <input type="text">
-            <span data-placeholder="Username"></span>
+            <input type="text" placeholder="Username">         
         </div>
 
         <div class="txtb">
-            <input type="password">
-            <span data-placeholder="Password"></span>
+            <input type="password" placeholder="Password">
         </div>
         <input type="submit" class="lgn_but" value="login">
 
