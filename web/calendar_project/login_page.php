@@ -10,10 +10,6 @@
 </head>
 <body>
 
-    <header>
-        <h1 class="txt_cen">Welcome to the Calendar Project!</h1>
-    </header>
-
     <form class="login_f">
         <h1>Login</h1>
         
