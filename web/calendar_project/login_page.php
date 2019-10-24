@@ -29,7 +29,7 @@
         <input type="submit" class="lgn_but" value="login">
 
         <div class="acc_btn">
-            <p>Create an Account<p> <a href="create_acc.php">Sign Up</a>
+            Create an Account <a href="create_acc.php">Sign Up</a>
         <div>
 
     </form>
