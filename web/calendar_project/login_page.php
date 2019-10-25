@@ -23,6 +23,7 @@
         <div class="txtb">
             <input type="password" placeholder="Password">
         </div>
+
         <input type="submit" class="lgn_but" value="login">
 
         <div class="acc_btn">
