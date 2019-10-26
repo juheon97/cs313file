@@ -68,3 +68,9 @@ body{
 .acc_btn {
     margin-top: 60px;
 }
+
+.errormessage {
+
+	color: rgb(255, 0, 0);
+
+}

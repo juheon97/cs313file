@@ -1,6 +1,34 @@
 <?php
+    session_start();
+    $_SESSION['user_message'] = '';
+    $_SESSION['pass_message'] = '';
+
+    $ua = htmlspecialchars($_POST["user_acc"]);
+    $pa = htmlspecialchars($_POST["pass_acc"]);
+
     require_once("db.php");
     $db = get_db();
+
+    $query = 'SELECT u_username, u_password FROM user_info WHERE u_username=:ua AND u_password=:pa';
+    $statement = $db->prepare($query);
+    $statement -> bindValue(':ua', $ua, PDO::PARAM_STR);
+    $statement -> bindValue(':pa', $pa, PDO::PARAM_STR);
+    $statement->execute();
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($users[0]['u_username'] != $ua) {
+            $_SESSION['user_message'] = "This username does not exist";
+            header("Location: login_page.php");
+            
+        }
+        else if ($users[0]['u_password'] != $pa){
+            $_SESSION['pass_message'] = "The password is invalid"
+            header("Location: login_page.php");
+        }
+        else {
+            header("Location: calendar.php");
+        }
+    }
 
 ?>
 
@@ -19,17 +47,21 @@
         <h1 class="txt_cen">Welcome to Calendar Project</h1>
     </header>
 
-    <form class="login_f" action="calendar.php" method="POST">
+    <form class="login_f" action="login_page.php" method="POST">
         <h1>Login</h1>
         
         <div class="txtb">
             <input type="text" placeholder="Username" name="user_acc">         
         </div>
-
+        <div class="errormessage">
+        <?= $_SESSION['user_message'] ?>
+        </div>
         <div class="txtb">
             <input type="password" placeholder="Password" name="pass_acc">
         </div>
-
+        <div class="errormessage">
+        <?= $_SESSION['pass_message'] ?>
+        </div>
         <input type="submit" class="lgn_but" value="login">
 
         <div class="acc_btn">
