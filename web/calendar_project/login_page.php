@@ -1,3 +1,9 @@
+<?php
+    require_once("db.php");
+    $db = get_db();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +19,15 @@
         <h1 class="txt_cen">Welcome to Calendar Project</h1>
     </header>
 
-    <form class="login_f">
+    <form class="login_f" action="calendar.php" method="POST">
         <h1>Login</h1>
         
         <div class="txtb">
-            <input type="text" placeholder="Username">         
+            <input type="text" placeholder="Username" name="user_acc">         
         </div>
 
         <div class="txtb">
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" name="pass_acc">
         </div>
 
         <input type="submit" class="lgn_but" value="login">
