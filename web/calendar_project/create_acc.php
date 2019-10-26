@@ -1,6 +1,5 @@
 <?php
-    require_once("db.php");
-    $db = get_db();
+
     $fn = htmlspecialchars($_POST["fname"]);
     $ln = htmlspecialchars($_POST["lname"]);
     $np = htmlspecialchars($_POST["npass"]);
@@ -8,17 +7,19 @@
     $exists = $_GET['exists'];
     
 
-    $query = 'SELECT u_username FROM user_info WHERE u_username=:$un';
+    require_once("db.php");
+    $db = get_db();
+    $query = 'SELECT u_username FROM user_info WHERE u_username=:un';
     $statement = $db->prepare($query);
     $statement -> bindValue(':un', $un, PDO::PARAM_STR);
     $statement->execute();
     $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    if($user[0]['u_username']=== $un) {
+    if($user[0]['u_username'] === $un) {
        header("Location: create_acc.php?exists=True");
     }
     else {
-        $query = 'INSERT INTO user_info(u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
+        $query = 'INSERT INTO user_info (u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
         $stmt = $db -> prepare($query);
         $stmt->bindValue(':un', $un, PDO::PARAM_STR);
         $stmt->bindValue(':np', $np, PDO::PARAM_STR);  
