@@ -58,8 +58,8 @@
             <input type="text" name="nuser" placeholder="Username">         
         </div>
         <?php 
-        if($eists === True) {
-            echo "<span style='font-size:80%' class='errormessage'>"."This username already exists."."</span>"
+        if($exists === True) {
+            echo "<span style='font-size:80%' class='errormessage'>"."This username already exists."."</span>";
         }
         ?>
 
