@@ -20,15 +20,16 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($user[0]['u_username'] === $un) {
             $_SESSION['message'] = "This username already exists";
-         else {
-            $query = 'INSERT INTO user_info (u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
-            $stmt = $db -> prepare($query);
+        }
+        else {
+            $query2 = 'INSERT INTO user_info (u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
+            $stmt = $db -> prepare($query2);
             $stmt->bindValue(':un', $un, PDO::PARAM_STR);
             $stmt->bindValue(':np', $np, PDO::PARAM_STR);  
             $stmt->bindValue(':fn', $fn, PDO::PARAM_STR);
             $stmt->bindValue(':ln', $ln, PDO::PARAM_STR);  
             $result = $stmt->execute(); 
-            header("Location: confirm.php")
+            header("Location: confirm.php");
         }
     }
 
