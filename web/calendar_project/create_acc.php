@@ -1,33 +1,36 @@
 <?php
 
+    session_start();
+    $_SESSION['message'] = '';
+
     $fn = htmlspecialchars($_POST["fname"]);
     $ln = htmlspecialchars($_POST["lname"]);
     $np = htmlspecialchars($_POST["npass"]);
     $un = htmlspecialchars($_POST["nuser"]);
-    $exists = $_GET['exists'];
     
 
     require_once("db.php");
     $db = get_db();
+
     $query = 'SELECT u_username FROM user_info WHERE u_username=:un';
     $statement = $db->prepare($query);
     $statement -> bindValue(':un', $un, PDO::PARAM_STR);
     $statement->execute();
     $user = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    if($user[0]['u_username'] === $un) {
-       header("Location: create_acc.php?exists=True");
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($user[0]['u_username'] === $un) {
+            $_SESSION['message'] = "This username already exists";
+         else {
+            $query = 'INSERT INTO user_info (u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
+            $stmt = $db -> prepare($query);
+            $stmt->bindValue(':un', $un, PDO::PARAM_STR);
+            $stmt->bindValue(':np', $np, PDO::PARAM_STR);  
+            $stmt->bindValue(':fn', $fn, PDO::PARAM_STR);
+            $stmt->bindValue(':ln', $ln, PDO::PARAM_STR);  
+            $result = $stmt->execute(); 
+            header("Location: confirm.php")
+        }
     }
-    else {
-        $query = 'INSERT INTO user_info (u_username, u_password, first_name, last_name) VALUES (:un, :np, :fn, :ln)';
-        $stmt = $db -> prepare($query);
-        $stmt->bindValue(':un', $un, PDO::PARAM_STR);
-        $stmt->bindValue(':np', $np, PDO::PARAM_STR);  
-        $stmt->bindValue(':fn', $fn, PDO::PARAM_STR);
-        $stmt->bindValue(':ln', $ln, PDO::PARAM_STR);  
-        $result = $stmt->execute(); 
-    }
-
 
 ?>
 
@@ -46,26 +49,23 @@
         <h1 class="txt_cen">Welcome to Calendar Project</h1>
     </header>
 
-    <form class="login_f" method = "POST" action = "confirm.php">
+    <form class="login_f" method = "POST" action = "create_acc.php">
         <h1>Create An Account</h1>
         <div class="txtb">
-            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="fname" placeholder="First Name" required />
         </div>
 
         <div class="txtb">
-            <input type="text" name="lname" placeholder="Last Name">
+            <input type="text" name="lname" placeholder="Last Name" required />
         </div>    
         <div class="txtb">
-            <input type="text" name="nuser" placeholder="Username">         
+            <input type="text" name="nuser" placeholder="Username" required />         
         </div>
-        <?php 
-        if($exists === True) {
-            echo "<span style='font-size:80%' class='errormessage'>"."This username already exists."."</span>";
-        }
-        ?>
-
+        <div class="errormessage">
+        <?= $_SESSION['message'] ?>
+        </div>
         <div class="txtb">
-            <input type="text" name="npass" placeholder="Password">
+            <input type="text" name="npass" placeholder="Password" required />
         </div>
         <input type="submit" class="lgn_but" value="Create an account">
 
