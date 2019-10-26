@@ -22,7 +22,7 @@
             
         }
         else if ($users[0]['u_password'] != $pa){
-            $_SESSION['pass_message'] = "The password is invalid"
+            $_SESSION['pass_message'] = "The password is invalid";
             header("Location: login_page.php");
         }
         else {
