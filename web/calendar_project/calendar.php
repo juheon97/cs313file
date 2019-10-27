@@ -15,10 +15,10 @@
     <?php
         require_once("db.php");
         $db = get_db();    
-
-        $query = 'SELECT first_name, user_info_id FROM user_info WHERE user_info_id=:$_SESSION["user_id"]';
+        $id = $_SESSION["user_id"];
+        $query = 'SELECT first_name, user_info_id FROM user_info WHERE user_info_id=:id';
         $statement = $db->prepare($query);
-        $statement -> bindValue(':$_SESSION["user_id"]', $_SESSION["user_id"], PDO::PARAM_INT);
+        $statement -> bindValue(':id', $id, PDO::PARAM_INT);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
         //$query2 = 'SELECT calendar_name,  FROM calendar';
