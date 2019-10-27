@@ -22,7 +22,7 @@
             $_SESSION['message'] = "This username does not exist";
             
         }
-        else if ($users[0]['u_username'] != $pa){
+        else if ($users[0]['u_password'] != $pa){
             $_SESSION['message2'] = "The password is invalid";
         }
         else {
