@@ -1,7 +1,8 @@
 <?php
     session_start();
-    $_SESSION['message_u'] = '';
-    $_SESSION['message_p'] = '';
+    $_SESSION['message'] = '';
+    $_SESSION['message2'] = '';
+    
 
 
     $ua = htmlspecialchars($_POST["user_acc"]);
@@ -18,12 +19,12 @@
     $users = $statement->fetchAll(PDO::FETCH_ASSOC);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($users[0]['u_username'] != $ua) {
-            $_SESSION['message_u'] = "This username does not exist";
+            $_SESSION['message'] = "This username does not exist";
             header("Location: login_page.php");
             
         }
         else if ($users[0]['u_password'] != $pa){
-            $_SESSION['message_p'] = "The password is invalid";
+            $_SESSION['message2'] = "The password is invalid";
             header("Location: login_page.php");
         }
         else {
@@ -55,13 +56,13 @@
             <input type="text" placeholder="Username" name="user_acc" required />         
         </div>
         <div class="errormessage">
-        <?= $_SESSION['message_u'] ?>
+        <?= $_SESSION['message'] ?>
         </div>
         <div class="txtb">
             <input type="password" placeholder="Password" name="pass_acc" required />
         </div>
         <div class="errormessage">
-        <?= $_SESSION['message_p'] ?>
+        <?= $_SESSION['message2'] ?>
         </div>
         <input type="submit" class="lgn_but" value="login">
 

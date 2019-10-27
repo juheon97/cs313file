@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-    $_SESSION['message'] = '';
 
     $fn = htmlspecialchars($_POST["fname"]);
     $ln = htmlspecialchars($_POST["lname"]);
