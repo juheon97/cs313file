@@ -21,11 +21,11 @@
         if($users[0]['u_username'] != $ua) {
             $_SESSION['message'] = "This username does not exist";
             
-            
         }
-        else if ($users[0]['u_password'] != $pa){
-            $_SESSION['message2'] = "The password is invalid";
-            
+        else if ($users[0]['u_username'] == $ua){
+            if ($users[0]['u_password'] != $pa){
+                $_SESSION['message2'] = "The password is invalid";
+            }
         }
         else {
             header("Location: calendar.php");
