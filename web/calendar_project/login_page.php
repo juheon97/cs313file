@@ -11,7 +11,7 @@
     require_once("db.php");
     $db = get_db();
 
-    $query = 'SELECT u_username, u_password FROM user_info WHERE u_username=:ua AND u_password=:pa';
+    $query = 'SELECT u_username, u_password, user_info_id, first_name FROM user_info WHERE u_username=:ua AND u_password=:pa';
     $statement = $db->prepare($query);
     $statement -> bindValue(':ua', $ua, PDO::PARAM_STR);
     $statement -> bindValue(':pa', $pa, PDO::PARAM_STR);
@@ -22,12 +22,12 @@
             $_SESSION['message'] = "This username does not exist";
             
         }
-        else if ($users[0]['u_username'] == $ua){
-            if ($users[0]['u_password'] != $pa){
-                $_SESSION['message2'] = "The password is invalid";
-            }
+        else if ($users[0]['u_username'] != $pa){
+            $_SESSION['message2'] = "This username does not exist";
         }
         else {
+            $_SESSION['user_id'] = $users[0]['user_info_id'];
+            $_SESSION['first_name'] = $users[0]['first_name'];
             header("Location: calendar.php");
         }
     }

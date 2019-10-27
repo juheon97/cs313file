@@ -1,6 +1,8 @@
 INSERT INTO user_info(u_username, u_password, first_name, last_name) VALUES ('jk0348', 'opl789456', 'Juheon', 'Song');
 
 INSERT INTO calendar(calendar_name, user_info_id) VALUES ('School Work', 1);
+INSERT INTO calendar(calendar_name, user_info_id) VALUES ('Courses', 1);
+INSERT INTO calendar(calendar_name, user_info_id) VALUES ('Week day', 1);
 
 INSERT INTO subject_event(sesubject, calendar_id) VALUES ('Cooking', 1);
 INSERT INTO subject_event(sesubject, calendar_id) VALUES ('Studying', 1);
