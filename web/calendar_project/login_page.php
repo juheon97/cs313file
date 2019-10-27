@@ -20,12 +20,12 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($users[0]['u_username'] != $ua) {
             $_SESSION['message'] = "This username does not exist";
-            header("Location: login_page.php");
+            
             
         }
         else if ($users[0]['u_password'] != $pa){
             $_SESSION['message2'] = "The password is invalid";
-            header("Location: login_page.php");
+            
         }
         else {
             header("Location: calendar.php");
