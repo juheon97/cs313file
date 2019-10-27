@@ -1,3 +1,6 @@
+<?php 
+    session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +20,13 @@
         $statement = $db->prepare($query);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $query2 = 'SELECT calendar_name FROM calendar';
+        $query2 = 'SELECT calendar_name,  FROM calendar';
         $statementc = $db->prepare($query2);
         $statementc->execute();
         $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<p class='txt_cen'>".$name[0]['first_name']."'s"." ".$cal[0]['calendar_name']." ". "Calendar"."</p>";
+        echo "<p class='txt_cen'>".$name[0]['first_name']."'s"." "."Calendar"."</p>";
+        echo "<p class='txt_cen'>".$_SESSION['first_name']."'s". " ". "Calendar"."</p>";
         
       ?>
     </div>
