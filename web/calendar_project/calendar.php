@@ -16,17 +16,17 @@
         require_once("db.php");
         $db = get_db();    
 
-        $query = 'SELECT first_name FROM user_info';
+        $query = 'SELECT first_name, user_info_id FROM user_info WHERE user_info_id=:$_SESSION["user_id"]';
         $statement = $db->prepare($query);
+        $statement -> bindValue(':$_SESSION["user_id"]', $_SESSION["user_id"], PDO::PARAM_INT);
         $statement->execute();
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $query2 = 'SELECT calendar_name,  FROM calendar';
-        $statementc = $db->prepare($query2);
-        $statementc->execute();
-        $cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
+        //$query2 = 'SELECT calendar_name,  FROM calendar';
+        //$statementc = $db->prepare($query2);
+        //$statementc->execute();
+        //$cal = $statementc->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<p class='txt_cen'>".$name[0]['first_name']."'s"." "."Calendar"."</p>";
-        echo "<p class='txt_cen'>".$_SESSION['first_name']."'s". " ". "Calendar"."</p>";
         
       ?>
     </div>

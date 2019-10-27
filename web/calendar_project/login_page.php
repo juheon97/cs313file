@@ -27,7 +27,6 @@
         }
         else {
             $_SESSION['user_id'] = $users[0]['user_info_id'];
-            $_SESSION['first_name'] = $users[0]['first_name'];
             header("Location: calendar.php");
         }
     }
