@@ -18,11 +18,11 @@
     $statement->execute();
     $users = $statement->fetchAll(PDO::FETCH_ASSOC);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($users[0]['u_username'] != $ua) {
+        if( $users[0]['u_password'] != $pa) {
             $_SESSION['message'] = "This username does not exist";
             
         }
-        else if ($users[0]['u_password'] != $pa){
+        else if ($users[0]['u_username'] != $ua){
             $_SESSION['message2'] = "The password is invalid";
         }
         else {
@@ -30,7 +30,7 @@
             header("Location: calendar.php");
         }
     }
-
+    
 ?>
 
 <!DOCTYPE html>
