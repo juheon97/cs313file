@@ -8,6 +8,14 @@ function toggle_visibility(id){
     }
 }
 
+function add_events(id) {
+    const calendar = load_cal(id);
+    calendar.then(data => {
+        cal_div= document.getElementById('calendar_display');
+        cal_div.innerHTML = data;
+    })
+}
+
 function load_cal(id) {
    const data = {
        cal_id: id
@@ -23,7 +31,7 @@ function load_cal(id) {
     .then(response => {
         if (response.ok){
             console.log("in then", response);
-
+            return response.json();
         }
     });
 }

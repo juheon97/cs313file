@@ -79,7 +79,7 @@
        
     foreach ($cal_name as $cn) {
         $c_id = $cn["calendar_id"];
-        echo "<button  onclick='load_cal($c_id)'>".$cn["calendar_name"]."</button>";
+        echo "<button  onclick='add_events($c_id)'>".$cn["calendar_name"]."</button>";
     }
     
     ?>
