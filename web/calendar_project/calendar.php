@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="button_style.css">
-    <script type = "text/javascript" src = "week9.js"></script>
+    <script type = "text/javascript" src = "cal.js"></script>
     <title>calendar</title>
 </head>
 <body>

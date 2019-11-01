@@ -19,11 +19,11 @@
     $users = $statement->fetchAll(PDO::FETCH_ASSOC);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($users[0]['u_username'] != $ua) {
-            $_SESSION['message2'] = "The username or password are incorrect";
+            $_SESSION['message2'] = "The userid and password are invalid";
             
         }
         else if ($users[0]['u_password'] != $pa){
-            $_SESSION['message2'] = "The username or password are incorrect";
+            $_SESSION['message2'] = "The userid and password are invalid";
         }
         else {
             $_SESSION['user_id'] = $users[0]['user_info_id'];
