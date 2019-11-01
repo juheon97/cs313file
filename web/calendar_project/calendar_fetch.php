@@ -2,8 +2,7 @@
 require_once("db.php");
 $db = get_db();
 
-$requestString = $_POST['cal_id'];
-$request = json_decode($requestString, true);
+$request = $_POST['cal_id'];
 
 echo $request;
 // $id_c = $request[0]['cal_id'];
