@@ -9,8 +9,24 @@ function toggle_visibility(id){
 }
 
 function load_cal(id) {
-   var cal_id = id;
-   return fetch("calendar.php", {})
-   .then(response =>) 
+   const data = {
+       cal_id: id
+   };
+   return fetch("calendar_fetch.php", {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+        'Content-Type': 'application/json'
+   },
+   body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok){
+            console.log("in then", reponse);
+
+        }
+    }
+    
+   
 
 }

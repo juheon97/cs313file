@@ -87,6 +87,9 @@
     
     </div>
 
+    <div id="calendar_display">
+
+    </div>
 
     
 
