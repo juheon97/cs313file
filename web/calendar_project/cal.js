@@ -25,7 +25,7 @@ function load_cal(id) {
         method: 'POST',
         mode: 'cors',
         headers: {
-        'Content-Type': 'text/html'
+        'Content-Type': 'multipart/form-data'
         },
         body: formData
     })
