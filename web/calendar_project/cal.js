@@ -12,7 +12,8 @@ function add_events(id) {
     const calendar = load_cal(id);
     calendar.then(data => {
         cal_div= document.getElementById('calendar_display');
-        cal_div.innerHTML = data;
+        console.log(data);
+        cal_div.innerHTML = data["sesubject"];
     })
 }
 
