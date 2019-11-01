@@ -22,12 +22,12 @@ function load_cal(id) {
     formData.append('cal_id', id);
 
     return fetch("calendar_fetch.php", {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-        'Content-Type': 'application/json'
-   },
-   body: formData
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+        'Content-Type': 'text/html'
+        },
+        body: formData
     })
     .then(response => {
         if (response.ok){
