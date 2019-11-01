@@ -52,3 +52,9 @@ outline: none;
 color: #fff;
 background-color: rgb(221, 221, 221);
 }
+
+.errormessage {
+
+	color: rgb(255, 0, 0);
+
+}

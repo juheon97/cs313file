@@ -2,6 +2,7 @@
     session_start();
     $_SESSION['message'] = '';
     $_SESSION['message2'] = '';
+    $_SESSION['message3'] = '';
     
 
 
