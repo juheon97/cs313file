@@ -14,15 +14,15 @@
 </head>
 <body>
 
-    <form id="popup-box1" class="popup-position" action="calendar.php" method="POST">
+<form id="popup-box1" class="popup-position" action="calendar.php" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
-                <h3>Add a calendar</h3>
-                <div class="txtb">
-                    <input type="text" placeholder="type a text" name="cal_n" required />
-                </div>
-                <input type="submit" class="lgn_but" value="login">
-                <p style="text-align: right;"><a href="javascript:void(0)">Cancel to add</a></p>    
+                    <h3>Add a calendar</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="cal_n" required />
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
             </div>
         </div>
     </form>
@@ -55,7 +55,7 @@
     }
     
     ?>
-    <button onclick="toggle_visibility(popup-box1)">Add</button>
+    <button onclick="toggle_visibility('popup-box1')">Add</button>
     
     </div>
 
