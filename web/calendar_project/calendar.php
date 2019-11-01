@@ -34,7 +34,7 @@
             $stmt->bindValue(':c_na', $c_na, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);  
             $result = $stmt->execute(); 
-            header("Location: calendar.php");
+            ##Needs to get fixed
         }
     }
 ?>
