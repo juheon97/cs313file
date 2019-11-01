@@ -23,10 +23,6 @@ function load_cal(id) {
 
     return fetch("calendar_fetch.php", {
         method: 'POST',
-        mode: 'cors',
-        headers: {
-        'Content-Type': 'multipart/form-data'
-        },
         body: formData
     })
     .then(response => {
