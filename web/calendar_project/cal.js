@@ -22,7 +22,7 @@ function load_cal(id) {
     })
     .then(response => {
         if (response.ok){
-            console.log("in then", reponse);
+            console.log("in then", response);
 
         }
     });
