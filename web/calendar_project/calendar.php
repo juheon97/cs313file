@@ -24,21 +24,21 @@
     $statement3 -> bindValue(':id', $id, PDO::PARAM_INT);
     $statement3->execute();
     $namec = $statement3->fetchAll(PDO::FETCH_ASSOC);
+    ##Needs to get fixed
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($namec[0]['calendar_name'] === $c_na) {
             $_SESSION['message3'] = "This name already exists";
         }
-        else {
+        else if (isset($_POST['btn_add'])) {
             $query4 = 'INSERT INTO calendar (calendar_name, user_info_id) VALUES (:c_na, :ld)';
             $stmt = $db -> prepare($query4);
             $stmt->bindValue(':c_na', $c_na, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);  
             $result = $stmt->execute(); 
-            ##Needs to get fixed
         }
     }
 ?>
-<form id="popup-box1" class="popup-position" action="calendar.php" method="POST">
+<form id="popup-box1" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
                     <h3>Add a calendar</h3>
@@ -48,7 +48,7 @@
                     <div class="errormessage">
                         <?= $_SESSION['message3'] ?>
                     </div>
-                    <input type="submit" class="lgn_but" value="Add">
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box1')">
                     <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
             </div>
         </div>
@@ -85,6 +85,9 @@
     <button onclick="toggle_visibility('popup-box1')">Add</button>
     
     </div>
+
+
+    
 
    
 
