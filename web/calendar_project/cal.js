@@ -32,7 +32,7 @@ function load_cal(id) {
     .then(response => {
         if (response.ok){
             console.log("in then", response);
-            return response;
+            return response.json();
         }
     });
 }
