@@ -27,7 +27,7 @@ function load_cal(id) {
     headers: {
         'Content-Type': 'application/json'
    },
-   body: JSON.stringify(data)
+   body: formData
     })
     .then(response => {
         if (response.ok){
