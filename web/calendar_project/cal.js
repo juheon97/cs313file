@@ -18,10 +18,10 @@ function add_events(id) {
 }
 
 function load_cal(id) {
-   const data = {
-       cal_id: id
-   };
-   return fetch("calendar_fetch.php", {
+    var formData = new FormData();
+    formData.append('cal_id', id);
+
+    return fetch("calendar_fetch.php", {
     method: 'POST',
     mode: 'cors',
     headers: {
