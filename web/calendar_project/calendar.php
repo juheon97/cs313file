@@ -30,7 +30,7 @@
             $_SESSION['message3'] = "This name already exists";
         }
         else if (isset($_POST['btn_add'])) {
-            $query4 = 'INSERT INTO calendar (calendar_name, user_info_id) VALUES (:c_na, :ld)';
+            $query4 = 'INSERT INTO calendar (calendar_name, user_info_id) VALUES (:c_na, :id)';
             $stmt = $db -> prepare($query4);
             $stmt->bindValue(':c_na', $c_na, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);  
