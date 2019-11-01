@@ -24,7 +24,7 @@
     $statement3 -> bindValue(':id', $id, PDO::PARAM_INT);
     $statement3->execute();
     $namec = $statement3->fetchAll(PDO::FETCH_ASSOC);
-    ##Needs to get fixed
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($namec[0]['calendar_name'] === $c_na) {
             $_SESSION['message3'] = "This name already exists";
@@ -78,7 +78,8 @@
     $cal_name = $statement2->fetchAll(PDO::FETCH_ASSOC);
        
     foreach ($cal_name as $cn) {
-        echo "<button  onclick='testfunction()'>".$cn["calendar_name"]."</button>";
+        $c_id = $cn["calendar_id"];
+        echo "<button  onclick='load_cal($c_id)'>".$cn["calendar_name"]."</button>";
     }
     
     ?>

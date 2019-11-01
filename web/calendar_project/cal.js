@@ -8,3 +8,9 @@ function toggle_visibility(id){
     }
 }
 
+function load_cal(id) {
+   var cal_id = id;
+   return fetch("calendar.php", {})
+   .then(response =>) 
+
+}
