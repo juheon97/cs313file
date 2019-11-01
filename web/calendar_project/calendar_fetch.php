@@ -13,7 +13,9 @@ $query = 'SELECT sesubject, calendar_id FROM subject_event WHERE calendar_id=:id
     $statement->execute();
     $sub = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    $results = ''
     foreach($sub as $s){
-        echo $s["sesubject"];
+        $results .= "<div>Subject: $s['sesubject'], Calendar ID: $s['calendar_id']";
     }
+    echo $results;
 ?>
