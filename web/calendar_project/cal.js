@@ -25,8 +25,5 @@ function load_cal(id) {
             console.log("in then", reponse);
 
         }
-    }
-    
-   
-
+    });
 }
