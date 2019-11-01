@@ -15,7 +15,7 @@ $query = 'SELECT sesubject, calendar_id FROM subject_event WHERE calendar_id=:id
 
     $results = '';
     foreach($sub as $s){
-        $results .= "<div>Subject: $s['sesubject'], Calendar ID: $s['calendar_id']";
+        $results .= "<div>Subject:". $s['sesubject'] .", Calendar ID: " .$s['calendar_id'];
     }
     echo $results;
 ?>
