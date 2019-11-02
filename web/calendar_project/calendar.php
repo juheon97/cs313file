@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="button_style.css">
     <script type = "text/javascript" src = "cal.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
     <title>Note</title>
 </head>
 <body>
@@ -79,11 +80,12 @@
        
     foreach ($cal_name as $cn) {
         $c_id = $cn["form_id"];
-        echo "<button  onclick='add_events($c_id)'>".$cn["form_name"]."</button>";
+        echo "<button  onclick='add_events($c_id)' class='btn btn-success'>".$cn["form_name"]."</button>";
     }
     
     ?>
-    <button onclick="toggle_visibility('popup-box1')">Add</button>
+    <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>
+    <button onclick="toggle_visibility('popup-box1')" class="btn btn-danger">Delete</button>
     
     </div>
 
