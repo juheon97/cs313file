@@ -1,11 +1,8 @@
 INSERT INTO user_info(u_username, u_password, first_name, last_name) VALUES ('jk0348', 'opl789456', 'Juheon', 'Song');
 
-INSERT INTO calendar(calendar_name, user_info_id) VALUES ('School Work', 1);
-INSERT INTO calendar(calendar_name, user_info_id) VALUES ('Courses', 1);
-INSERT INTO calendar(calendar_name, user_info_id) VALUES ('Week day', 1);
+INSERT INTO form(form_name, user_info_id) VALUES ('School Work', 1);
+INSERT INTO form(form_name, user_info_id) VALUES ('Courses', 1);
+INSERT INTO form(form_name, user_info_id) VALUES ('Week day', 1);
 
-INSERT INTO subject_event(sesubject, calendar_id) VALUES ('Cooking', 1);
-INSERT INTO subject_event(sesubject, calendar_id) VALUES ('Studying', 1);
-
-INSERT INTO events(edescription, edate, etime, calendar_id, subject_event_id) VALUES ('Prepare ingredients before 9 am', '2019-10-19', '10:00:00', 1, 1);
-INSERT INTO events(edescription, edate, etime, calendar_id, subject_event_id) VALUES ('Finish weekly chapter reading - CS313', '2019-10-27', '12:00:00', 1, 2);
+INSERT INTO events(esubject, edescription, edate, etime, form_id) VALUES ('Rel 351', 'Finish writing Journal 6', '2019-10-19', '10:00:00', 1);
+INSERT INTO events(esubject, edescription, edate, etime, form_id) VALUES ('CS 313', 'Finish reading chapter I - CS313', '2019-10-27', '12:00:00', 1);

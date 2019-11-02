@@ -1,4 +1,3 @@
 DROP TABLE events;
-DROP TABLE subject_event;
-DROP TABLE calendar;
+DROP TABLE form;
 DROP TABLE user_info;

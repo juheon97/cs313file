@@ -2,7 +2,7 @@
 require_once("db.php");
 $db = get_db();
 
-$id_c = $_POST['cal_id'];
+$id_f = $_POST['form_id'];
 
 $query = 'SELECT sesubject, calendar_id FROM subject_event WHERE calendar_id=:id_c';
 $statement = $db->prepare($query);
