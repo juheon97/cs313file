@@ -21,7 +21,8 @@ foreach($sub as $s){
     echo "</div>";
     
 }
-echo "<button onclick='toggle_visibility(\'popup-box1\')' class='btn btn-primary'>"."Add"."</button>";
+$a = 'popup_box1';
+echo "<button onclick='toggle_visibility($a)' class='btn btn-primary'>"."Add"."</button>";
 
 ?>
 
