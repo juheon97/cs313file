@@ -1,10 +1,10 @@
 .table-box{
-    margin: 50px auto;
+    margin: 40px auto;
 }
 .table-row{
 
     display: table;
-    width: 80%;
+    width: 85%;
     margin: 10px auto;
     font-family: sans-serif;
     background: transparent;
@@ -23,7 +23,7 @@
 
 .table-cell{
     display: table-cell;
-    width: 30%;
+    width: 18%;
     text-align: center;
     padding: 4px 0;
     border-right: 1px solid #d6d4d6;
