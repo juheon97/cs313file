@@ -67,7 +67,7 @@
     $name_d = $statement_d->fetchAll(PDO::FETCH_ASSOC);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($namec[0]['form_name'] != $f_na2) {
+        if($name_d[0]['form_name'] != $f_na2) {
             $_SESSION['message4'] = "This name does not exist";
     
         }
