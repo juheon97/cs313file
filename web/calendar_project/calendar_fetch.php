@@ -21,8 +21,20 @@ foreach($sub as $s){
     echo "</div>";
     
 }
-$a = 'popup-box1';
-echo "<button onclick='toggle_visibility($a)' class='btn btn-primary'>"."Add"."</button>";
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="eve_button">
+        <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>       
+    </div>
+</body>
+</html>
 
