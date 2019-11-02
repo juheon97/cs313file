@@ -4,6 +4,12 @@ max-width: 300px;
 margin: auto;
 }
 
+.btn_right{
+  position: absolute; 
+  right: 0;
+}
+
+
 .popup-position{
 display: none;
 position: fixed;

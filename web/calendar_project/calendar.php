@@ -108,6 +108,11 @@
         $name = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<p class='txt_cen'>".$name[0]['first_name']."'s"." "."Simple Event Note"."</p>";
+        echo "<form action='signout.php'>";
+        echo "<div class='btn_right'>";
+        echo "<button class='btn btn-warning'>"."Sign Out"."</button>";
+        echo "</div>";
+        echo "</form>"
       ?>
     </div>
 
