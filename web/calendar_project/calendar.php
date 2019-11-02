@@ -72,8 +72,8 @@
     
         }
         else if (isset($_POST['btn_delete'])) {
-            $query_d = 'DELETE FROM form WHERE user_info_id=:id';
-            $stmt_d = $db -> prepare($query_d);
+            $query_d2 = 'DELETE FROM form WHERE user_info_id=:id';
+            $stmt_d = $db -> prepare($query_d2);
             $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
             $result_d = $stmt->execute(); 
         }
