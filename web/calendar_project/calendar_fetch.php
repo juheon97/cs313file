@@ -23,6 +23,7 @@ foreach($sub as $s){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,29 +33,49 @@ foreach($sub as $s){
     <title>Document</title>
 </head>
 
+<?php 
+$at1 = htmlspecialchars($_POST["ts"]);
+$ad = htmlspecialchars($_POST["td"]);
+$add = htmlspecialchars($_POST["tdd"]);
+$att = htmlspecialchars($_POST["tt"]);
 
+require_once("db.php");
+$db = get_db();
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    if (isset($_POST['btn_add2'])) {
+        $query_e = 'INSERT INTO evets (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
+        $stmt = $db -> prepare($querye);
+        $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
+        $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
+        $stmt_e->bindValue(':add', $add, PDO::PARAM_STR);
+        $stmt_e->bindValue(':att', $att, PDO::PARAM_STR);
+        $stmt_e->bindValue(':id_f', $id_f, PDO::PARAM_INT);  
+        $resulte = $stmt_e->execute(); 
+    }
+}
+?>
 <body>
 <form id="popup-box3" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
                     <h3>Add a form</h3>
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
+                        <input type="text" placeholder="type a subject" name="ts" required />
                     </div>
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
+                        <input type="text" placeholder="type a description" name="td" required />
                     </div>
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
-                    </div>
+                        <input type="text" placeholder="tpye a date ex = 10:00:00" name="tt" required />
+                    </div>tpye a date ex = 2019-10-19
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
+                        <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
                     </div>
-                    <div class="errormessage">
-                        <?= $_SESSION['message3'] ?>
-                    </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box1')">
-                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility('popup-box3')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
             </div>
         </div>
     </form>
