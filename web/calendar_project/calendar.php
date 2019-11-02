@@ -54,6 +54,47 @@
             </div>
         </div>
     </form>
+
+
+    <?php   
+    $f_na2 = htmlspecialchars($_POST["form_n2"]);
+    $id = $_SESSION["user_id"];
+    $query_d = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_na2';
+    $statement_d = $db->prepare($query_d);
+    $statement_d -> bindValue(':f_na2', $f_na2, PDO::PARAM_STR);
+    $statement_d -> bindValue(':id', $id, PDO::PARAM_INT);
+    $statement_d->execute();
+    $name_d = $statement_d->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($namec[0]['form_name'] != $f_na2) {
+            $_SESSION['message4'] = "This name does not exist";
+    
+        }
+        else if (isset($_POST['btn_delete'])) {
+            $query_d = 'DELETE form_id, form_name, user_info_id FROM form WHERE user_info_id=:id';
+            $stmt_d = $db -> prepare($query_d);
+            $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
+            $result_d = $stmt->execute(); 
+        }
+    }
+?>
+    <form id="popup-box2" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Delete a form</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n2" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message4'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Delete" name="btn_delete" onclick="toggle_visibility('popup-box2')">
+                    <input type="button" class="lgn_but" value="Cancel to delete" onclick="toggle_visibility('popup-box2')">  
+            </div>
+        </div>
+    </form>
+
     <div>
     <?php
         require_once("db.php");
@@ -85,7 +126,7 @@
     
     ?>
     <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>
-    <button onclick="toggle_visibility('popup-box1')" class="btn btn-danger">Delete</button>
+    <button onclick="toggle_visibility('popup-box2')" class="btn btn-danger">Delete</button>
     
     </div>
 

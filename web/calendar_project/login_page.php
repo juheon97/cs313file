@@ -3,6 +3,7 @@
     $_SESSION['message'] = '';
     $_SESSION['message2'] = '';
     $_SESSION['message3'] = '';
+    $_SESSION['message4'] = '';
     
 
 
