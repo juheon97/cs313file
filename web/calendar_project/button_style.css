@@ -64,3 +64,9 @@ background-color: rgb(221, 221, 221);
 	color: rgb(255, 0, 0);
 
 }
+
+.centerize {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}

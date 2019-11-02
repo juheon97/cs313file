@@ -32,7 +32,7 @@ foreach($sub as $s){
     <title>Document</title>
 </head>
 <body>
-    <div class="eve_button">
+    <div class="centerize">
         <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>       
     </div>
 </body>
