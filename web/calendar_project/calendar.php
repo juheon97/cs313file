@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="button_style.css">
+    <link rel="stylesheet" href="table.css">
     <script type = "text/javascript" src = "cal.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
     <title>Note</title>
@@ -134,6 +135,29 @@
     <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>
     <button onclick="toggle_visibility('popup-box2')" class="btn btn-danger">Delete</button>
     
+    </div>
+
+    <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell">
+                <p>Subject</p>
+            </div>
+            <div class="table-cell">
+                <p>Description</p>
+            </div>
+             <div class="table-cell">
+                <p>Time</p>
+             </div>
+             <div class="table-cell">
+                <p>Date</p>
+             </div>
+             <div class="table-cell">
+                <p>Delete</p>
+             </div>
+             <div class="table-cell">
+                <p>Edit</p>
+             </div>
+        </div>
     </div>
 
     <div id="form_display">
