@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (isset($_POST['btn_add2'])) {
         $query_e = 'INSERT INTO evets (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
-        $stmt = $db -> prepare($querye);
+        $stmt_e = $db -> prepare($query_e);
         $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
         $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
         $stmt_e->bindValue(':add', $add, PDO::PARAM_STR);
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     <div class="txtb">
                         <input type="text" placeholder="tpye a date ex = 10:00:00" name="tt" required />
-                    </div>tpye a date ex = 2019-10-19
+                    </div>
                     <div class="txtb">
                         <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
                     </div>
