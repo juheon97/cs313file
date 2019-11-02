@@ -11,7 +11,7 @@ $sub = $statement->fetchAll(PDO::FETCH_ASSOC);
 $results = '';
 
 foreach($sub as $s){
-    $results .= "<div class='table-cell'>"."<p>".$s['esubject']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edescription']."</p>"."</div>"
+    $results = "<div class='table-cell'>"."<p>".$s['esubject']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edescription']."</p>"."</div>"
     ."<div class='table-cell'>"."<p>".$s['etime']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edate']."</p>"."</div>"
     ."<div class='table-cell'>"."<input type='submit' class='btn btn-danger' value='Remove'>"."</div>"
     ."<div class='table-cell'>"."<input type='submit' class='btn btn-default' value='Edit'>"."</div>";
