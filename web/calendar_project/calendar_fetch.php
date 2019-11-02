@@ -31,9 +31,35 @@ foreach($sub as $s){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
+
 <body>
+<form id="popup-box3" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Add a form</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message3'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box1')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
+            </div>
+        </div>
+    </form>
     <div class="centerize">
-        <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>       
+        <button onclick="toggle_visibility('popup-box3')" class="btn btn-primary">Add</button>       
     </div>
 </body>
 </html>
