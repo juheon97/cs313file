@@ -15,7 +15,8 @@ foreach($sub as $s){
     ."<div class='table-cell'>"."<p>".$s['etime']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edate']."</p>"."</div>"
     ."<div class='table-cell'>"."<input type='submit' class='btn btn-danger' value='Remove'>"."</div>"
     ."<div class='table-cell'>"."<input type='submit' class='btn btn-default' value='Edit'>"."</div>";
+    echo $results;
     
 }
-echo $results;
+
 ?>
