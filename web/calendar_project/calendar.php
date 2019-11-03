@@ -57,11 +57,11 @@
     
         }
         else if (isset($_POST['btn_delete2'])) {
-            $query_d2 = 'DELETE FROM form WHERE user_info_id=:id AND form_name=:f_na2';
-            $stmt_d = $db -> prepare($query_d2);
-            $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
-            $stmt_d->bindValue(':f_na2', $f_na2, PDO::PARAM_INT);
-            $result_d = $stmt_d->execute(); 
+            $query_delete = 'DELETE FROM form WHERE user_info_id=:id AND form_name=:f_na2';
+            $stmt_delete = $db -> prepare($query_delete);
+            $stmt_delete->bindValue(':id', $id, PDO::PARAM_INT);  
+            $stmt_delete->bindValue(':f_na2', $f_na2, PDO::PARAM_STR);
+            $result_delete = $stmt_delete->execute(); 
         }
     }
     ?>
