@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $db -> prepare($query);
         $stmt->bindValue(':sub', $sub, PDO::PARAM_STR);
         $stmt->bindValue(':descr', $descr, PDO::PARAM_STR);
-        $stmt->bindValue(':dat', $dat, PDO::PARAM_INT);
+        $stmt->bindValue(':dat', $dat, PDO::PARAM_STR);
         $stmt->bindValue(':id2', $id2, PDO::PARAM_INT);  
         $resulte = $stmt->execute(); 
         header("Location: calendar.php");
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" placeholder="type a description" name="add_des" required />
                 </div>
                 <div class="txtb">
-                    <input type="text" placeholder="tpye a date ex = 2019-10-19" name="add_date" required />
+                    <input type="date" placeholder="tpye a date ex = 2019-10-19" name="add_date" required />
                 </div>
                 <input type="submit" class="lgn_but" value="Add" name="add_btn">
                 
