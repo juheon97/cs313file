@@ -169,9 +169,19 @@
         else if(isset($_POST['btn_add2'])) {
             $_SESSION['form_id'] = $name_add[0]['form_id'];
             header("Location: addevent.php");
-        }    
+        }
+        else if(isset($_POST['btn_delete'])) {
+            $_SESSION['form_id'] = $name_add[0]['form_id'];
+            header("Location: delete_event.php");
+        }
+        else if(isset($_POST['btn_edit'])) {
+            $_SESSION['form_id'] = $name_add[0]['form_id'];
+            header("Location: edit_event.php");
+        }        
     }
 
+    
+    
     ?>
 
 <form id="popup-box3" class="popup-position" action="" method="POST">
