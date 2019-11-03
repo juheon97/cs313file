@@ -164,7 +164,7 @@
         if($name_d[0]['form_name'] != $f_add) {
             $_SESSION['message5'] = "This name does not exist";
         }
-        else {
+        else if(isset($_POST['btn_add']) {
             $_SESSION['form_id'] = $namec[0]['form_id'];
             header("Location: addevent.php");
         }    
@@ -184,7 +184,7 @@
                     <div class="errormessage">
                         <?= $_SESSION['message5'] ?>
                     </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box3')">
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility('popup-box3')">
                     <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
             </div>
         </div>
@@ -210,8 +210,8 @@
                     <div class="errormessage">
                         <?= $_SESSION['message6'] ?>
                     </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box4')">
-                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box4')">  
+                    <input type="submit" class="lgn_but" value="Delete" name="btn_delete" onclick="toggle_visibility('popup-box4')">
+                    <input type="button" class="lgn_but" value="Cancel to delete" onclick="toggle_visibility('popup-box4')">  
             </div>
         </div>
     </form>
@@ -234,8 +234,8 @@
                     <div class="errormessage">
                         <?= $_SESSION['message7'] ?>
                     </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box5')">
-                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box5')">  
+                    <input type="submit" class="lgn_but" value="Edit" name="btn_edit" onclick="toggle_visibility('popup-box5')">
+                    <input type="button" class="lgn_but" value="Cancel to edit" onclick="toggle_visibility('popup-box5')">  
             </div>
         </div>
     </form>
