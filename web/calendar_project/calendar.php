@@ -166,7 +166,7 @@
     
         }
 
-    
+    }
 
     ?>
 
@@ -193,7 +193,7 @@
     
         }
 
-    
+    }
 
     ?>
     <form id="popup-box4" class="popup-position" action="" method="POST">
@@ -218,9 +218,7 @@
             $_SESSION['message7'] = "This name does not exist";
     
         }
-
-    
-
+    }
     ?>
     <form id="popup-box5" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
