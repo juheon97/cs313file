@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="txtb">
                         <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
                     </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility('popup-box3')">
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility2('popup-box3', $id_f)">
                     <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
             </div>
         </div>

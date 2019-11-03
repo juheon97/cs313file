@@ -7,6 +7,16 @@ function toggle_visibility(id){
         e.style.display= 'block';
     }
 }
+function toggle_visibility2(id, id2){
+    var e = document.getElementById(id);
+    if (e.style.display == 'block') {
+        e.style.display = 'none';
+    }
+    else {
+        e.style.display= 'block';
+    }
+    add_events(id2)
+}
 
 function add_events(id) {
     const calendar = load_cal(id);
