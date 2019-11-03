@@ -163,8 +163,12 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($name_d[0]['form_name'] != $f_add) {
             $_SESSION['message5'] = "This name does not exist";
-    
         }
+        else {
+            $_SESSION['form_id'] = $namec[0]['form_id'];
+            header("Location: addevent.php");
+        }    
+
 
     }
 
