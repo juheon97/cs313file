@@ -38,7 +38,7 @@ $at1 = htmlspecialchars($_POST["ts"]);
 $ad = htmlspecialchars($_POST["td"]);
 $add = htmlspecialchars($_POST["tdd"]);
 $att = htmlspecialchars($_POST["tt"]);
-
+$id_f = $_POST['form_id'];
 require_once("db.php");
 $db = get_db();
 
@@ -46,7 +46,7 @@ $db = get_db();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (isset($_POST['btn_add2'])) {
-        $query_e = 'INSERT INTO evets (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
+        $query_e = 'INSERT INTO events (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
         $stmt_e = $db -> prepare($query_e);
         $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
         $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="txtb">
                         <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
                     </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility2('popup-box3', $id_f)">
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility2('popup-box3')">
                     <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
             </div>
         </div>
