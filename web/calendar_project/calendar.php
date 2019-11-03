@@ -178,7 +178,7 @@
 
     ?>
 
-<form id="popup-box3" class="popup-position" action="" method="POST">
+<form id="popup-box3" class="popup-position" action="calendar.php" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
                     <h3>Type the form name</h3>
