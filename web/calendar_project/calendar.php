@@ -172,24 +172,6 @@
         }    
     }
 
-    $f_delete = htmlspecialchars($_POST["form_delete"]);
-    $query_del = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_delete';
-    $statement_del = $db->prepare($query_del);
-    $statement_del -> bindValue(':f_add', $f_add, PDO::PARAM_STR);
-    $statement_del -> bindValue(':id', $id, PDO::PARAM_INT);
-    $statement_del->execute();
-    $name_del = $statement_del->fetchAll(PDO::FETCH_ASSOC);
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($name_del[0]['form_name'] != $f_delete) {
-            $_SESSION['message6'] = "This name does not exist";
-    
-        }
-        else if(isset($_POST['btn_delete'])) {
-            $_SESSION['form_id'] = $name_del[0]['form_id'];
-            header("Location: delete_event.php");
-        }    
-    }
-
     ?>
 
 <form id="popup-box3" class="popup-position" action="" method="POST">
@@ -208,7 +190,21 @@
         </div>
     </form>
 
-
+    <form id="popup-box4" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Type the form name</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_delete" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message6'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Delete" name="btn_delete" onclick="toggle_visibility('popup-box4')">
+                    <input type="button" class="lgn_but" value="Cancel to delete" onclick="toggle_visibility('popup-box4')">  
+            </div>
+        </div>
+    </form>
 
 
     <?php 
