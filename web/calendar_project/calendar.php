@@ -155,9 +155,8 @@
     </div>
 
     <div id="form_display">
-
-
     </div>
+
     <?php 
     $f_add = htmlspecialchars($_POST["form_add"]);
     $query_add = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_add';
@@ -178,7 +177,7 @@
 
     ?>
 
-<form id="popup-box3" class="popup-position" action="calendar.php" method="POST">
+<form id="popup-box3" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
                     <h3>Type the form name</h3>
