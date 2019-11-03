@@ -33,8 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resulte = $stmt_e->execute(); 
         header("Location: calendar.php");
     }    
-
-
 }
 ?>
 
@@ -50,31 +48,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 
-<form class="login_f" action="" method="POST">
-               
-                            <h3>Add an event</h3>
-                            <div class="txtb">
-                                <input type="text" placeholder="type a subject" name="ts" required />
-                            </div>
-                            <div class="errormessage">
-                                <?= $_SESSION['message8'] ?>
-                            </div>
-                            <div class="txtb">
-                                <input type="text" placeholder="type a description" name="td" required />
-                            </div>
-                            <div class="txtb">
-                                <input type="text" placeholder="tpye a date ex = 10:00:00" name="tt" required />
-                            </div>
-                            <div class="txtb">
-                                <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
-                            </div>
-                            <input type="submit" class="lgn_but" value="Add" name="add_btn">
+            <form class="login_f" action="" method="POST">
+               <h3>Add an event</h3>
+                <div class="txtb">
+                    <input type="text" placeholder="type a subject" name="ts" required />
+                </div>
+                <div class="errormessage">
+                    <?= $_SESSION['message8'] ?>
+                </div>
+                <div class="txtb">
+                    <input type="text" placeholder="type a description" name="td" required />
+                </div>
+                <div class="txtb">
+                    <input type="text" placeholder="tpye a date ex = 10:00:00" name="tt" required />
+                </div>
+                <div class="txtb">
+                    <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
+                </div>
+                <input type="submit" class="lgn_but" value="Add" name="add_btn">
                 
             </form>
         
             <form  action="go_calendar.php">
                 <div><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
-            
             </form>
 
     
