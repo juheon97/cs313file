@@ -172,25 +172,6 @@
         }    
     }
 
-    ?>
-
-<form id="popup-box3" class="popup-position" action="" method="POST">
-        <div id="popup-wrapper">
-            <div id="popup-container">
-                    <h3>Type the form name</h3>
-                    <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_add" required />
-                    </div>
-                    <div class="errormessage">
-                        <?= $_SESSION['message5'] ?>
-                    </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility('popup-box3')">
-                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
-            </div>
-        </div>
-    </form>
-
-    <?php 
     $f_delete = htmlspecialchars($_POST["form_delete"]);
     $query_del = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_delete';
     $statement_del = $db->prepare($query_del);
@@ -208,7 +189,24 @@
             header("Location: delete_event.php");
         }    
     }
+
     ?>
+
+<form id="popup-box3" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Type the form name</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_add" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message5'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add2" onclick="toggle_visibility('popup-box3')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
+            </div>
+        </div>
+    </form>
 
 <form id="popup-box4" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
