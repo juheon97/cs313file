@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
     <title>Add Event</title>
 </head>
-<body>
+<body onLoad="hide()">
 
 
             <form class="login_f" action="" method="POST">
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" placeholder="type a description" name="edi_des" required />
                 </div>
                 <div class="txtb">
-                <input type="text" placeholder="tpye a date ex = 10-15-2019" name="edi_date" id="edi_date" onInput = "valid(this.value, this.id)" required />
+                <input type="text" placeholder="tpye a date ex = 2019-08-05" name="edi_date" id="edi_date" onInput = "valid(this.value, this.id)" required />
                     <br/><span id = "edi_datemessage" style = "font-size: 80%" class = "errormessage">Please follow the format ex = yyyy-mm-dd</span></td>
                 </div>
                 <input type="submit" class="lgn_but" value="Edit" name="edi_btn">
