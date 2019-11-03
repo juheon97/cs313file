@@ -40,24 +40,8 @@
         }
     }
 ?>
-<form id="popup-box1" class="popup-position" action="" method="POST">
-        <div id="popup-wrapper">
-            <div id="popup-container">
-                    <h3>Add a form</h3>
-                    <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
-                    </div>
-                    <div class="errormessage">
-                        <?= $_SESSION['message3'] ?>
-                    </div>
-                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box1')">
-                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
-            </div>
-        </div>
-    </form>
 
-
-    <?php   
+<?php   
     $f_na2 = htmlspecialchars($_POST["form_n2"]);
     $id = $_SESSION["user_id"];
     $query_d = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_na2';
@@ -80,7 +64,23 @@
             $result_d = $stmt_d->execute(); 
         }
     }
-?>
+    ?>
+<form id="popup-box1" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Add a form</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message3'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box1')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box1')">  
+            </div>
+        </div>
+    </form>
+
     <form id="popup-box2" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
