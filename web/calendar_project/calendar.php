@@ -77,7 +77,7 @@
             $stmt_d = $db -> prepare($query_d2);
             $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
             $stmt_d->bindValue(':f_na2', $f_na2, PDO::PARAM_INT);
-            $result_d = $stmt_d->execute();             
+            $result_d = $stmt_d->execute(); 
         }
     }
 ?>
