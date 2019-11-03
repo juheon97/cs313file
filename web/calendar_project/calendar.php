@@ -151,12 +151,6 @@
              <div class="table-cell">
                 <p>Date</p>
              </div>
-             <div class="table-cell">
-                <p>Delete</p>
-             </div>
-             <div class="table-cell">
-                <p>Edit</p>
-             </div>
         </div>
     </div>
 
@@ -164,8 +158,13 @@
 
 
     </div>
-
-    
+    <?php 
+    ?>
+    <div class="centerize">
+    <input type="button" class="btn btn-primary" value="Add an event"  onclick="toggle_visibility('popup-box1')">
+    <input type="button" class="btn btn-danger" value="Delete an event" onclick="toggle_visibility('popup-box1')">
+    <input type="button" class="btn btn-default" value="Edit an event"  onclick="toggle_visibility('popup-box1')">
+    </div>
 
    
 
