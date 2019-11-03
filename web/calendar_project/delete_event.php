@@ -1,5 +1,5 @@
 <?php 
-session_start()
+session_start();
 require_once("db.php");
 $db = get_db();
 $id2 = $_SESSION["form_id"];
@@ -49,6 +49,7 @@ $id2 = $_SESSION["form_id"];
                     ."<div class='table-cell'>"."<p>".$s['edate']."</p>"."</div>";
                     echo "</div>";
                     echo "</div>";
+                }
             ?>
 
 
