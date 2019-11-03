@@ -3,7 +3,7 @@ require_once("db.php");
 $db = get_db();
 
 $id_f = $_POST['form_id'];
-$query = 'SELECT esubject, edescription, edate, etime, form_id FROM events WHERE form_id=:id_f ORDER BY etime DESC, edate DESC';
+$query = 'SELECT esubject, edescription, edate, form_id FROM events WHERE form_id=:id_f ORDER BY edate DESC';
 $statement = $db->prepare($query);
 $statement -> bindValue(':id_f', $id_f, PDO::PARAM_INT);
 $statement->execute();
