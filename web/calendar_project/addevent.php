@@ -1,6 +1,14 @@
 <?php 
 session_start();
+$id2 = $_SESSION["form_id"];
+$sub = htmlspecialchars($_POST["add_subject"]);
+$des = htmlspecialchars($_POST["add_des"]);
+$time = htmlspecialchars($_POST["add_time"]);
+$dat = htmlspecialchars($_POST["add_date"]);
+require_once("db.php");
+$db = get_db();
 ?>
+
 
 
 <!DOCTYPE html>
@@ -19,19 +27,19 @@ session_start();
             <form class="login_f" action="" method="POST">
                <h3>Add an event</h3>
                 <div class="txtb">
-                    <input type="text" placeholder="type a subject" name="ts" required />
+                    <input type="text" placeholder="type a subject" name="add_subject" required />
                 </div>
                 <div class="errormessage">
                     <?= $_SESSION['message8'] ?>
                 </div>
                 <div class="txtb">
-                    <input type="text" placeholder="type a description" name="td" required />
+                    <input type="text" placeholder="type a description" name="add_des" required />
                 </div>
                 <div class="txtb">
-                    <input type="text" placeholder="tpye a date ex = 10:00:00" name="tt" required />
+                    <input type="text" placeholder="tpye a date ex = 10:00:00" name="add_time" required />
                 </div>
                 <div class="txtb">
-                    <input type="text" placeholder="tpye a date ex = 2019-10-19" name="tdd" required />
+                    <input type="text" placeholder="tpye a date ex = 2019-10-19" name="add_date" required />
                 </div>
                 <input type="submit" class="lgn_but" value="Add" name="add_btn">
                 

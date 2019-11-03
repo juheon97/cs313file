@@ -1,4 +1,4 @@
 <?php 
 session_start();
-header("Location: login_page.php");
+header("Location: go_calendar.php");
 ?>
