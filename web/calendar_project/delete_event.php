@@ -31,7 +31,21 @@ session_start();
             <form  action="go_calendar.php">
                 <div><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
             </form>
-            <div>
+
+
+            <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell">
+                <p>Subject</p>
+            </div>
+            <div class="table-cell">
+                <p>Description</p>
+            </div>
+             <div class="table-cell">
+                <p>Date</p>
+             </div>
+        </div>
+    </div>
 
             <?php 
 
@@ -54,7 +68,6 @@ session_start();
                 }
             ?>
 
-            </div>
 
     
 </body>
