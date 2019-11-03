@@ -53,7 +53,7 @@
 </head>
 <body>
     <header>
-        <h1 class="txt_cen">Welcome to Calendar Project</h1>
+        <h1 class="txt_cen">Welcome to Simple Event Note</h1>
     </header>
 
     <form class="login_f" action="login_page.php" method="POST">
