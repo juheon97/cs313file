@@ -25,7 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_e->bindValue(':id2', $id2, PDO::PARAM_INT);  
         $resulte = $stmt_e->execute(); 
         header("Location: calendar.php");
-    }    
+    }   
+    
+}
 
 ?>
 
