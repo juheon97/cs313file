@@ -15,8 +15,8 @@ function toggle_visibility(id, id2){
     }
     else {
         e.style.display= 'block';
-        add_events(id2)
     }
+    add_events(id2)
 }
 
 function add_events(id) {
