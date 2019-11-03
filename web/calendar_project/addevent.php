@@ -1,10 +1,17 @@
 <?php 
 session_start();
+?>
+
+<?php 
+
+
 $id2 = $_SESSION["form_id"];
 $at1 = htmlspecialchars($_POST["ts"]);
 $ad = htmlspecialchars($_POST["td"]);
 $add = htmlspecialchars($_POST["tdd"]);
 $att = htmlspecialchars($_POST["tt"]);
+require_once("db.php");
+$db = get_db();
 $query_add = 'SELECT esubject, form_id FROM events WHERE form_id=:id2';
 $statement = $db->prepare($query_add);
 $statement -> bindValue(':id2', $id2, PDO::PARAM_INT);
