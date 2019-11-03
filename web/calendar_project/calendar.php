@@ -187,7 +187,7 @@
             $_SESSION['message5'] = "This name does not exist";
         }
         else if(isset($_POST['btn_delete'])) {
-            $_SESSION['form_id'] = $name_add[0]['form_id'];
+            $_SESSION['form_id'] = $name_del[0]['form_id'];
             header("Location: delete_event.php");
         }    
     }
