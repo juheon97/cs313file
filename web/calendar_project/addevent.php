@@ -11,19 +11,12 @@ $statement = $db->prepare($query_add);
 $statement -> bindValue(':sub', $sub, PDO::PARAM_STR);
 $statement -> bindValue(':id2', $id2, PDO::PARAM_INT);
 $statement->execute();
-$name_check = $statement_add->fetchAll(PDO::FETCH_ASSOC);
+$name_check = $statement->fetchAll(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($name_check[0]['esubject'] === $sub) {
         $_SESSION['message8'] = "This subject already exists";
     }
     else if(isset($_POST['add_btn'])) {
-        $query = 'INSERT INTO events(esubject, edescription, edate, form_id) VALUES (:sub, :descr, :dat, :id2)';
-        $stmt = $db -> prepare($query);
-        $stmt->bindValue(':sub', $sub, PDO::PARAM_STR);
-        $stmt->bindValue(':descr', $descr, PDO::PARAM_STR);
-        $stmt->bindValue(':dat', $dat, PDO::PARAM_STR);
-        $stmt->bindValue(':id2', $id2, PDO::PARAM_INT);  
-        $resulte = $stmt->execute(); 
         header("Location: calendar.php");
     }   
     
