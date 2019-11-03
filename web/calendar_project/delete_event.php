@@ -1,5 +1,8 @@
 <?php 
 session_start();
+require_once("db.php");
+$db = get_db();
+$id2 = $_SESSION["form_id"];
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +32,7 @@ session_start();
             </form>
         
             <form  action="go_calendar.php">
-                <div><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
+                <div class="centerize"><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
             </form>
 
 
@@ -49,9 +52,6 @@ session_start();
 
             <?php 
 
-                require_once("db.php");
-                $db = get_db();
-                $id2 = $_SESSION["form_id"];
                 $query = 'SELECT esubject, edescription, edate, form_id FROM events WHERE form_id=:id2 ORDER BY edate DESC';
                 $statement = $db->prepare($query);
                 $statement -> bindValue(':id2', $id2, PDO::PARAM_INT);

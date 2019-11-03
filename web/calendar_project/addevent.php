@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         
             <form  action="go_calendar.php">
-                <div><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
+                <div class="centerize"><input type="submit" value="Go back to Calendar" class='btn btn-warning'></div>
             </form>
 
     
