@@ -36,6 +36,7 @@ foreach($sub as $s){
 <body>
 
 <?php 
+session_start()
 $at1 = htmlspecialchars($_POST["ts"]);
 $ad = htmlspecialchars($_POST["td"]);
 $add = htmlspecialchars($_POST["tdd"]);
