@@ -208,7 +208,7 @@
         }
         else if(isset($_POST['btn_edit'])) {
             $_SESSION['form_id'] = $name_edit[0]['form_id'];
-            header("Location: edit_event.php");
+            header("Location: Edit_event.php");
         }    
     }
 
