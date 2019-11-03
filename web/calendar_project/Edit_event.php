@@ -3,6 +3,32 @@ session_start();
 require_once("db.php");
 $db = get_db();
 $id2 = $_SESSION["form_id"];
+$form_edi = htmlspecialchars($_POST["edi_subject"]);
+$form_des = htmlspecialchars($_POST["edi_des"]);
+$form_date = htmlspecialchars($_POST["edi_date"]);
+$query2 = 'SELECT esubject, form_id FROM events WHERE esubject=:form_edi AND form_id=:id2';
+$statement_e = $db->prepare($query2);
+$statement_e -> bindValue(':form_edi', $form_edi, PDO::PARAM_STR);
+$statement_e -> bindValue(':id2', $id2, PDO::PARAM_INT);
+$statement_e->execute();
+$name_edi = $statement_e->fetchAll(PDO::FETCH_ASSOC);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if($name_edi[0]['esubject'] != $form_edi) {
+        $_SESSION['message10'] = "This subject does not exist";
+
+    }
+    else if (isset($_POST['edi_btn'])) {
+        $query_e2 = 'UPDATE events SET esubject=:form_edi, edescription=:form_des, edate=:formdate WHERE form_id=:id2 AND esubject=:form_edi';
+        $stmt_e = $db -> prepare($query_e2);
+        $stmt_e->bindValue(':form_edi', $form_edi, PDO::PARAM_STR);
+        $stmt_e->bindValue(':form_des', $form_des, PDO::PARAM_STR);  
+        $stmt_e->bindValue(':form_date', $form_date, PDO::PARAM_STR);    
+        $stmt_e->bindValue(':id2', $id2, PDO::PARAM_INT);
+        $result_e = $stmt_e->execute(); 
+        header("Location: calendar.php");
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
