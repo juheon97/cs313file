@@ -159,9 +159,9 @@
 
     </div>
     <?php 
-
+    $f_add = htmlspecialchars($_POST["form_add"]);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($name_d[0]['form_name'] != $f_na2) {
+        if($name_d[0]['form_name'] != $f_add) {
             $_SESSION['message5'] = "This name does not exist";
     
         }
@@ -186,9 +186,9 @@
         </div>
     </form>
     <?php 
-
+    $f_delete = htmlspecialchars($_POST["form_delete"]);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($name_d[0]['form_name'] != $f_na2) {
+        if($name_d[0]['form_name'] != $f_delete) {
             $_SESSION['message6'] = "This name does not exist";
     
         }
@@ -201,7 +201,7 @@
             <div id="popup-container">
                     <h3>Type the form name</h3>
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
+                        <input type="text" placeholder="type a text" name="form_delete" required />
                     </div>
                     <div class="errormessage">
                         <?= $_SESSION['message6'] ?>
@@ -212,9 +212,9 @@
         </div>
     </form>
     <?php 
-
+    $f_edit = htmlspecialchars($_POST["form_edit"]);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($name_d[0]['form_name'] != $f_na2) {
+        if($name_d[0]['form_name'] != $f_edit) {
             $_SESSION['message7'] = "This name does not exist";
     
         }
@@ -225,7 +225,7 @@
             <div id="popup-container">
                     <h3>Type the form name</h3>
                     <div class="txtb">
-                        <input type="text" placeholder="type a text" name="form_n" required />
+                        <input type="text" placeholder="type a text" name="form_edit" required />
                     </div>
                     <div class="errormessage">
                         <?= $_SESSION['message7'] ?>
