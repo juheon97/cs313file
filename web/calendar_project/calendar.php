@@ -78,6 +78,11 @@
             $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
             $stmt_d->bindValue(':f_na2', $f_na2, PDO::PARAM_INT);
             $result_d = $stmt_d->execute(); 
+            $id_form = $name_d[0]['form_id'];
+            $query_d3 = 'DELETE FROM events WHERE form_id=:id_form';
+            $stmt_d2 = $db -> prepare($query_d3); 
+            $stmt_d2->bindValue(':id_form', $id_form, PDO::PARAM_INT);
+            $result_d2 = $stmt_d2->execute(); 
         }
     }
 ?>
