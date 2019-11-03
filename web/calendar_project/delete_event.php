@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
     else if (isset($_POST['del_btn'])) {
-        $query_d2 = 'DELETE FROM events WHERE form_id=:id2 AND esubject=;del_sub';
+        $query_d2 = 'DELETE FROM events WHERE form_id=:id2 AND esubject=:del_sub';
         $stmt_d = $db -> prepare($query_d2);
         $stmt_d->bindValue(':id2', $id2, PDO::PARAM_INT);  
         $stmt_d->bindValue(':del_sub', $del_sub, PDO::PARAM_STR);
