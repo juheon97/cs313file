@@ -3,6 +3,28 @@ session_start();
 require_once("db.php");
 $db = get_db();
 $id2 = $_SESSION["form_id"];
+$del_sub = htmlspecialchars($_POST["del_subject"]);
+$query2 = 'SELECT esubject, form_id FROM events WHERE esubject=:del_sub AND form_id=:id2';
+$statement_d = $db->prepare($query2);
+$statement_d -> bindValue(':del_sub', $del_sub, PDO::PARAM_STR);
+$statement_d -> bindValue(':id2', $id2, PDO::PARAM_INT);
+$statement_d->execute();
+$name_del = $statement_d->fetchAll(PDO::FETCH_ASSOC);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if($name_del[0]['esubject'] != $del_sub) {
+        $_SESSION['message9'] = "This subject does not exist";
+
+    }
+    else if (isset($_POST['del_btn'])) {
+        $query_d2 = 'DELETE FROM events WHERE form_id=:id2 AND esubject=;del_sub';
+        $stmt_d = $db -> prepare($query_d2);
+        $stmt_d->bindValue(':id2', $id2, PDO::PARAM_INT);  
+        $stmt_d->bindValue(':del_sub', $del_sub, PDO::PARAM_STR);
+        $result_d = $stmt_d->execute(); 
+        header("Location: calendar.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +49,7 @@ $id2 = $_SESSION["form_id"];
                 <div class="errormessage">
                     <?= $_SESSION['message9'] ?>
                 </div>
-                <input type="submit" class="lgn_but" value="Add" name="del_btn">
+                <input type="submit" class="lgn_but" value="Delete" name="del_btn">
                 
             </form>
         
