@@ -169,19 +169,29 @@
         else if(isset($_POST['btn_add2'])) {
             $_SESSION['form_id'] = $name_add[0]['form_id'];
             header("Location: addevent.php");
+        }    
+    }
+
+    ?>
+
+<?php 
+    $f_delete = htmlspecialchars($_POST["form_delete"]);
+    $query_del = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_delete';
+    $statement_del = $db->prepare($query_del);
+    $statement_del -> bindValue(':f_delete', $f_delete, PDO::PARAM_STR);
+    $statement_del -> bindValue(':id', $id, PDO::PARAM_INT);
+    $statement_del->execute();
+    $name_del = $statement_del->fetchAll(PDO::FETCH_ASSOC);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($name_del[0]['form_name'] != $f_delete) {
+            $_SESSION['message5'] = "This name does not exist";
         }
         else if(isset($_POST['btn_delete'])) {
             $_SESSION['form_id'] = $name_add[0]['form_id'];
             header("Location: delete_event.php");
-        }
-        else if(isset($_POST['btn_edit'])) {
-            $_SESSION['form_id'] = $name_add[0]['form_id'];
-            header("Location: edit_event.php");
-        }        
+        }    
     }
 
-    
-    
     ?>
 
 <form id="popup-box3" class="popup-position" action="" method="POST">
