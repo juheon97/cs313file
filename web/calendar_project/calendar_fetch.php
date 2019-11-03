@@ -36,7 +36,6 @@ foreach($sub as $s){
 <body>
 
 <?php 
-session_start()
 $at1 = htmlspecialchars($_POST["ts"]);
 $ad = htmlspecialchars($_POST["td"]);
 $add = htmlspecialchars($_POST["tdd"]);
@@ -49,7 +48,7 @@ $db = get_db();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (isset($_POST['btn_add2'])) {
-        $query_e = 'INSERT INTO events (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
+        $query_e = 'INSERT INTO events (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att, :id_f)';
         $stmt_e = $db -> prepare($query_e);
         $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
         $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
