@@ -2,6 +2,19 @@
 session_start();
 ?>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="form_event.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    <title>Add Event</title>
+</head>
+<body>
+
 <?php 
 
 $id2 = $_SESSION["form_id"];
@@ -11,8 +24,9 @@ $add = htmlspecialchars($_POST["tdd"]);
 $att = htmlspecialchars($_POST["tt"]);
 require_once("db.php");
 $db = get_db();
-$query_add = 'SELECT esubject, form_id FROM events WHERE form_id=:id2 AND esubject=:$id2';
+$query_add = 'SELECT esubject, form_id FROM events WHERE form_id=:id2 AND esubject=:at1';
 $statement = $db->prepare($query_add);
+$statement -> bindValue(':at1', $at1, PDO::PARAM_STR);
 $statement -> bindValue(':id2', $id2, PDO::PARAM_INT);
 $statement->execute();
 $name_check = $statement_add->fetchAll(PDO::FETCH_ASSOC);
@@ -34,18 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }    
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="form_event.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
-    <title>Add Event</title>
-</head>
-<body>
             <form class="login_f" action="" method="POST">
                <h3>Add an event</h3>
                 <div class="txtb">
