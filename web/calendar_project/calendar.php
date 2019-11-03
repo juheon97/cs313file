@@ -160,10 +160,57 @@
     </div>
     <?php 
     ?>
+
+<form id="popup-box3" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Type the form name</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_add" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message5'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box3')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box3')">  
+            </div>
+        </div>
+    </form>
+    <form id="popup-box4" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Type the form name</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message6'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box4')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box4')">  
+            </div>
+        </div>
+    </form>
+    <form id="popup-box5" class="popup-position" action="" method="POST">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                    <h3>Type the form name</h3>
+                    <div class="txtb">
+                        <input type="text" placeholder="type a text" name="form_n" required />
+                    </div>
+                    <div class="errormessage">
+                        <?= $_SESSION['message7'] ?>
+                    </div>
+                    <input type="submit" class="lgn_but" value="Add" name="btn_add" onclick="toggle_visibility('popup-box5')">
+                    <input type="button" class="lgn_but" value="Cancel to add" onclick="toggle_visibility('popup-box5')">  
+            </div>
+        </div>
+    </form>
+
     <div class="centerize">
-    <input type="button" class="btn btn-primary" value="Add an event"  onclick="toggle_visibility('popup-box1')">
-    <input type="button" class="btn btn-danger" value="Delete an event" onclick="toggle_visibility('popup-box1')">
-    <input type="button" class="btn btn-default" value="Edit an event"  onclick="toggle_visibility('popup-box1')">
+    <input type="button" class="btn btn-primary" value="Add an event"  onclick="toggle_visibility('popup-box3')">
+    <input type="button" class="btn btn-danger" value="Delete an event" onclick="toggle_visibility('popup-box4')">
+    <input type="button" class="btn btn-default" value="Edit an event"  onclick="toggle_visibility('popup-box5')">
     </div>
 
    
