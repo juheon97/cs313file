@@ -132,8 +132,8 @@
     }
     
     ?>
-    <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add</button>
-    <button onclick="toggle_visibility('popup-box2')" class="btn btn-danger">Delete</button>
+    <button onclick="toggle_visibility('popup-box1')" class="btn btn-primary">Add a form</button>
+    <button onclick="toggle_visibility('popup-box2')" class="btn btn-danger">Delete a form</button>
     
     </div>
 

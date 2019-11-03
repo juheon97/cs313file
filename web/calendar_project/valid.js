@@ -19,6 +19,11 @@ function valid(value, id) {
 				validation = "error";
 			}
             break;
+        case "edi_date":
+            if (!date.test(value)) {
+                validation = "error";
+            }
+            break;
             
         
         default:
