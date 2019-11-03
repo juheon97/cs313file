@@ -7,6 +7,9 @@
     $_SESSION['message5'] = '';
     $_SESSION['message6'] = '';
     $_SESSION['message7'] = '';
+    $_SESSION['message8'] = '';
+    $_SESSION['message9'] = '';
+    $_SESSION['message10'] = '';
     
 
 
