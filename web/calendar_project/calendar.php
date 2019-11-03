@@ -194,6 +194,26 @@
 
     ?>
 
+<?php 
+    $f_edit = htmlspecialchars($_POST["form_edit"]);
+    $query_edit = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_edit';
+    $statement_edi = $db->prepare($query_edit);
+    $statement_edi -> bindValue(':f_edit', $f_edit, PDO::PARAM_STR);
+    $statement_edi -> bindValue(':id', $id, PDO::PARAM_INT);
+    $statement_edi->execute();
+    $name_edi = $statement_edi->fetchAll(PDO::FETCH_ASSOC);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($name_edi[0]['form_name'] != $f_edit) {
+            $_SESSION['message6'] = "This name does not exist";
+        }
+        else if(isset($_POST['btn_edit'])) {
+            $_SESSION['form_id'] = $name_edit[0]['form_id'];
+            header("Location: edit_event.php");
+        }    
+    }
+
+    ?>
+
 <form id="popup-box3" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
