@@ -159,6 +159,15 @@
 
     </div>
     <?php 
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($name_d[0]['form_name'] != $f_na2) {
+            $_SESSION['message5'] = "This name does not exist";
+    
+        }
+
+    
+
     ?>
 
 <form id="popup-box3" class="popup-position" action="" method="POST">
@@ -176,6 +185,17 @@
             </div>
         </div>
     </form>
+    <?php 
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($name_d[0]['form_name'] != $f_na2) {
+            $_SESSION['message6'] = "This name does not exist";
+    
+        }
+
+    
+
+    ?>
     <form id="popup-box4" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
@@ -191,6 +211,17 @@
             </div>
         </div>
     </form>
+    <?php 
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($name_d[0]['form_name'] != $f_na2) {
+            $_SESSION['message7'] = "This name does not exist";
+    
+        }
+
+    
+
+    ?>
     <form id="popup-box5" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
