@@ -1,4 +1,5 @@
 <?php
+session_start()
 require_once("db.php");
 $db = get_db();
 
@@ -34,6 +35,31 @@ foreach($sub as $s){
 </head>
 
 <body>
+
+<?php 
+$at1 = htmlspecialchars($_POST["ts"]);
+$ad = htmlspecialchars($_POST["td"]);
+$add = htmlspecialchars($_POST["tdd"]);
+$att = htmlspecialchars($_POST["tt"]);
+$id_f = $_POST['form_id'];
+require_once("db.php");
+$db = get_db();
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    if (isset($_POST['btn_add2'])) {
+        $query_e = 'INSERT INTO events (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att :id_f)';
+        $stmt_e = $db -> prepare($query_e);
+        $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
+        $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
+        $stmt_e->bindValue(':add', $add, PDO::PARAM_STR);
+        $stmt_e->bindValue(':att', $att, PDO::PARAM_STR);
+        $stmt_e->bindValue(':id_f', $id_f, PDO::PARAM_INT);  
+        $resulte = $stmt_e->execute(); 
+    }
+}
+?>
 <form id="popup-box3" class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
