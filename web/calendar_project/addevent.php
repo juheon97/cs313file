@@ -15,39 +15,7 @@ session_start();
 </head>
 <body>
 
-<?php 
 
-$id2 = $_SESSION["form_id"];
-$at1 = htmlspecialchars($_POST["ts"]);
-$ad = htmlspecialchars($_POST["td"]);
-$add = htmlspecialchars($_POST["tdd"]);
-$att = htmlspecialchars($_POST["tt"]);
-require_once("db.php");
-$db = get_db();
-$query_add = 'SELECT esubject, form_id FROM events WHERE form_id=:id2 AND esubject=:at1';
-$statement = $db->prepare($query_add);
-$statement -> bindValue(':at1', $at1, PDO::PARAM_STR);
-$statement -> bindValue(':id2', $id2, PDO::PARAM_INT);
-$statement->execute();
-$name_check = $statement_add->fetchAll(PDO::FETCH_ASSOC);
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if($name_check[0]['esubject'] === $at1) {
-        $_SESSION['message8'] = "This subject already exists";
-    }
-    else if(isset($_POST['add_btn'])) {
-        $query_e = 'INSERT INTO events (esubject, edescription, edate, etime, form_id) VALUES (:at1, :ad, :add, :att, :id2)';
-        $stmt_e = $db -> prepare($query_e);
-        $stmt_e->bindValue(':at1', $at1, PDO::PARAM_STR);
-        $stmt_e->bindValue(':ad', $ad, PDO::PARAM_STR);
-        $stmt_e->bindValue(':add', $add, PDO::PARAM_STR);
-        $stmt_e->bindValue(':att', $att, PDO::PARAM_STR);
-        $stmt_e->bindValue(':id2', $id2, PDO::PARAM_INT);  
-        $resulte = $stmt_e->execute(); 
-        header("Location: calendar.php");
-    }    
-}
-?>
             <form class="login_f" action="" method="POST">
                <h3>Add an event</h3>
                 <div class="txtb">
