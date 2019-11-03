@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Add Event</title>
 </head>
 <body>
-
             <form class="login_f" action="" method="POST">
                <h3>Add an event</h3>
                 <div class="txtb">

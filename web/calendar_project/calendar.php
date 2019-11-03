@@ -174,8 +174,6 @@
             $_SESSION['form_id'] = $name_add[0]['form_id'];
             header("Location: addevent.php");
         }    
-
-
     }
 
     ?>
