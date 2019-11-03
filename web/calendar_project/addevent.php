@@ -17,6 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message8'] = "This subject already exists";
     }
     else if(isset($_POST['add_btn'])) {
+        $query = 'INSERT INTO events(esubject, edescription, edate, form_id) VALUES (:sub, :descr, :dat, :id2)';
+        $stmt = $db -> prepare($query);
+        $stmt->bindValue(':sub', $sub, PDO::PARAM_STR);
+        $stmt->bindValue(':descr', $descr, PDO::PARAM_STR);
+        $stmt->bindValue(':dat', $dat, PDO::PARAM_STR);
+        $stmt->bindValue(':id2', $id2, PDO::PARAM_INT);  
+        $resulte = $stmt->execute(); 
         header("Location: calendar.php");
     }   
     
