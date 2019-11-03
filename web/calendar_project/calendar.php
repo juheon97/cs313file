@@ -164,7 +164,7 @@
         if($name_d[0]['form_name'] != $f_add) {
             $_SESSION['message5'] = "This name does not exist";
         }
-        else if(isset($_POST['btn_add']) {
+        else if(isset($_POST['btn_add2'])) {
             $_SESSION['form_id'] = $namec[0]['form_id'];
             header("Location: addevent.php");
         }    
