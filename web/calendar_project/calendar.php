@@ -72,7 +72,7 @@
             $_SESSION['message4'] = "This name does not exist";
     
         }
-        else if (isset($_POST['btn_delete'])) {
+        else if (isset($_POST['btn_delete2'])) {
             $query_d2 = 'DELETE FROM form WHERE user_info_id=:id AND form_name=:f_na2';
             $stmt_d = $db -> prepare($query_d2);
             $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
@@ -91,7 +91,7 @@
                     <div class="errormessage">
                         <?= $_SESSION['message4'] ?>
                     </div>
-                    <input type="submit" class="lgn_but" value="Delete" name="btn_delete" onclick="toggle_visibility('popup-box2')">
+                    <input type="submit" class="lgn_but" value="Delete" name="btn_delete2" onclick="toggle_visibility('popup-box2')">
                     <input type="button" class="lgn_but" value="Cancel to delete" onclick="toggle_visibility('popup-box2')">  
             </div>
         </div>
