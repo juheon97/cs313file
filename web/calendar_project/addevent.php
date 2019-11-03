@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message8'] = "This subject already exists";
     }
     else if(isset($_POST['add_btn'])) {
-        $query_e = 'INSERT INTO events (esubject, edescription, edate, form_id) VALUES (:sub, :descr, :dat, :id2)';
+        $query_e = 'INSERT INTO events(esubject, edescription, edate, form_id) VALUES (:sub, :descr, :dat, :id2)';
         $stmt_e = $db -> prepare($query_e);
         $stmt_e->bindValue(':sub', $sub, PDO::PARAM_STR);
         $stmt_e->bindValue(':descr', $descr, PDO::PARAM_STR);
