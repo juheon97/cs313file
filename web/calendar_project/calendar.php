@@ -160,12 +160,18 @@
     </div>
     <?php 
     $f_add = htmlspecialchars($_POST["form_add"]);
+    $query_add = 'SELECT form_id, form_name, user_info_id FROM form WHERE user_info_id=:id AND form_name=:f_add';
+    $statement_add = $db->prepare($query_add);
+    $statement_add -> bindValue(':f_add', $f_add, PDO::PARAM_STR);
+    $statement_add -> bindValue(':id', $id, PDO::PARAM_INT);
+    $statement_add->execute();
+    $name_add = $statement_add->fetchAll(PDO::FETCH_ASSOC);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($name_d[0]['form_name'] != $f_add) {
+        if($name_add[0]['form_name'] != $f_add) {
             $_SESSION['message5'] = "This name does not exist";
         }
         else if(isset($_POST['btn_add2'])) {
-            $_SESSION['form_id'] = $namec[0]['form_id'];
+            $_SESSION['form_id'] = $name_add[0]['form_id'];
             header("Location: addevent.php");
         }    
 
