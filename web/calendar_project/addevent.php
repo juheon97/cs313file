@@ -1,5 +1,5 @@
 <?php 
-session_start()
+session_start();
 
 $id2 = $_SESSION['form_id'];
 $at1 = htmlspecialchars($_POST["ts"]);
