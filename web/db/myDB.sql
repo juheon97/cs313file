@@ -16,7 +16,7 @@ CREATE TABLE events (
     event_id            SERIAL NOT NULL PRIMARY KEY,
     esubject            VARCHAR(200) NOT NULL,
     edescription        VARCHAR(300) NOT NULL,
-    edate               DATE NOT NULL,
+    edate               VARCHAR(20),
     form_id             INT NOT NULL REFERENCES form(form_id)
 );
 

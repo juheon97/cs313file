@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" placeholder="type a description" name="add_des" required />
                 </div>
                 <div class="txtb">
-                    <input type="date" placeholder="tpye a date ex = 2019-10-19" name="add_date" required />
+                    <input type="text" placeholder="tpye a date ex = 2019-10-19" name="add_date" required />
                 </div>
                 <input type="submit" class="lgn_but" value="Add" name="add_btn">
                 
