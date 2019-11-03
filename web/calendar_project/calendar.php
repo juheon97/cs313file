@@ -207,7 +207,7 @@
             $_SESSION['message6'] = "This name does not exist";
         }
         else if(isset($_POST['btn_edit'])) {
-            $_SESSION['form_id'] = $name_edit[0]['form_id'];
+            $_SESSION['form_id'] = $name_edi[0]['form_id'];
             header("Location: Edit_event.php");
         }    
     }
