@@ -1,19 +1,6 @@
 <?php 
 session_start()
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="form_event.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
-    <title>Add Event</title>
-</head>
-<body>
-<?php 
 $id2 = $_SESSION['form_id'];
 $at1 = htmlspecialchars($_POST["ts"]);
 $ad = htmlspecialchars($_POST["td"]);
@@ -45,7 +32,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<form id="popup-box3" class="popup-position" action="" method="POST">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="form_event.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    <title>Add Event</title>
+</head>
+<body>
+
+<form class="popup-position" action="" method="POST">
         <div id="popup-wrapper">
             <div id="popup-container">
                     <h3>Add an event</h3>
