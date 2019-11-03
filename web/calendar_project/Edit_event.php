@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
     else if (isset($_POST['edi_btn'])) {
-        $query_e2 = 'UPDATE events SET esubject=:form_edi, edescription=:form_des, edate=:formdate WHERE form_id=:id2 AND esubject=:form_edi';
+        $query_e2 = 'UPDATE events SET esubject=:form_edi, edescription=:form_des, edate=:form_date WHERE form_id=:id2 AND esubject=:form_edi';
         $stmt_e = $db -> prepare($query_e2);
         $stmt_e->bindValue(':form_edi', $form_edi, PDO::PARAM_STR);
         $stmt_e->bindValue(':form_des', $form_des, PDO::PARAM_STR);  
