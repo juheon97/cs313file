@@ -146,9 +146,6 @@
                 <p>Description</p>
             </div>
              <div class="table-cell">
-                <p>Time</p>
-             </div>
-             <div class="table-cell">
                 <p>Date</p>
              </div>
         </div>

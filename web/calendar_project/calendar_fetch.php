@@ -14,7 +14,7 @@ foreach($sub as $s){
     echo "<div class='table-box'>";
     echo "<div class='table-row'>";
     echo "<div class='table-cell'>"."<p>".$s['esubject']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edescription']."</p>"."</div>"
-    ."<div class='table-cell'>"."<p>".$s['etime']."</p>"."</div>"."<div class='table-cell'>"."<p>".$s['edate']."</p>"."</div>";
+    ."<div class='table-cell'>"."<p>".$s['edate']."</p>"."</div>";
     echo "</div>";
     echo "</div>";
     

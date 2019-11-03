@@ -7,6 +7,7 @@ $time = htmlspecialchars($_POST["add_time"]);
 $dat = htmlspecialchars($_POST["add_date"]);
 require_once("db.php");
 $db = get_db();
+
 ?>
 
 
