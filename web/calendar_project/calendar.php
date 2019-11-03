@@ -74,7 +74,7 @@
         }
         else if (isset($_POST['btn_delete2'])) {
             $id_form = $name_d[0]['form_id'];
-            $query_d2 = 'DELETE FROM form, events FROM form f LEFT JOIN events e on f.form_id=e.form_id  WHERE user_info_id=:id AND form_name=:f_na2 AND f.form_id=:id_form';
+            $query_d2 = 'DELETE form, events FROM form INNER JOIN events WHERE user_info_id=:id AND form_name=:f_na2 AND form_id=:id_form';
             $stmt_d = $db -> prepare($query_d2);
             $stmt_d->bindValue(':id', $id, PDO::PARAM_INT);  
             $stmt_d->bindValue(':f_na2', $f_na2, PDO::PARAM_STR);
