@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="txtb">
                     <input type="text" placeholder="tpye a date ex = 2019-08-05" name="add_date" id="add_date" onInput = "valid(this.value, this.id)" required />
-                    <br/><span id = "add_datemessage" style = "font-size: 80%" class = "errormessage">Please follow the format ex = mm-dd-yyyy</span></td>
+                    <br/><span id = "add_datemessage" style = "font-size: 80%" class = "errormessage">Please follow the format ex = yyyy-mm-dd</span></td>
                 </div>
                 <input type="submit" class="lgn_but" value="Add" name="add_btn">
                 
